@@ -1,0 +1,9 @@
+table, tr, td, th {
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+th{
+    background-color: lightgray;
+}
