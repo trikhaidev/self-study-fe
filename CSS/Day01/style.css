@@ -1,0 +1,38 @@
+h1{
+    color: red;
+}
+#firstP{
+    color: orange;
+    text-decoration: underline;
+}
+ul{
+    text-decoration: underline;
+}
+.list{
+    color: blue;
+}
+.demo{
+    background-color: lightblue;
+}
+
+ul.demo{
+    opacity: 0.5;;
+}
+
+#firstP,.demo{
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.demo.demo2{
+    font-style: italic;
+}
+
+table, th, td,tr{
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+/* .rowCenter{
+    vertical-align:middle;
+} */
