@@ -1,0 +1,21 @@
+p.demo.demo2{
+    color: blue;
+}
+
+h1.demo.demo2{
+    color:red
+}
+
+.demo{
+    text-decoration:underline;
+}
+
+#firstH1{
+    background-color: yellow;
+}
+
+li{
+    color: green;
+    text-decoration: underline;
+    background-color: lightgray;
+}

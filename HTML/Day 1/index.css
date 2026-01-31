@@ -1,0 +1,25 @@
+table, tr, td, th {
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+th{
+    background-color: lightgray;
+}
+
+h1 {
+    color : blue;
+    text-transform:capitalize;
+}
+
+td:hover,th:hover {
+    background-color: lightyellow;
+    cursor: pointer;
+}
+h4 {
+    opacity: 0.1;;
+}
+span {
+    opacity: 1;
+}
