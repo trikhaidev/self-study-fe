@@ -1,0 +1,54 @@
+h1,p{
+    color: darkgreen;
+}
+
+.demo{
+    background-color: gray;
+}
+
+.demo.demo2{
+    text-decoration: underline;
+}
+
+p.demo{
+    font-size: 40px;
+}
+
+div{
+    background-color: yellow;
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+#div2{
+    background-color: lightblue;
+}
+#div3{
+    background-color: red;
+}
+.vuong{
+    border-radius: 20px 20px;
+}
+h1.demo{
+    padding: 30px;
+}
+
+div.vuong2{
+    visibility: hidden;
+}
+.vuong, .demo2{
+    opacity: 0.2;
+}
+html{
+    background-color: lightblue;
+}
+.final{
+    color: red;
+    font-size: 30px;
+    text-align: center;
+}
+#firstHeading{
+    text-align: center;
+    color: red;
+}
