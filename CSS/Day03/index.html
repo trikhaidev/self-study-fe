@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1><a href="#final">Cuối trang có kết luận !</a></h1>
+    <div id="divMain">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, perferendis.</p>
+        <div class="khoi">
+            <h3>Nội dung div div</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, enim.</p>
+        </div>
+    </div>
+    <hr>
+    <div id="divMain2" class="khoi">
+        <a href="https://github.com/trikhaidev/self-study-fe.git">Link git</a>
+        <p>Thẻ p trong div2</p>
+        <h3><a href="https://youtu.be/aeH1Gr1f52k?list=PLPt6-BtUI22oveeGAyckbAXRSmTBGLZP4">Link video bài học ngày hôm nay</a></h3>
+    </div>
+    <hr>
+    <ul id="final">
+        <li>#divMain, #divMain2 => những phần tử có id là divMain, divMain2 sẽ được áp dụng</li>
+        <li>div div => những thẻ div NẰM TRONG thẻ div sẽ được áp dụng (nếu thẻ div chưa thẻ div không nằm trong thẻ div nào thì chính thẻ đó cx k đc áp dụng)</li>
+        <li>#divMain p => tất cả thẻ p nằm trong phần tử có id là divMain sẽ được áp dụng</li>
+        <li>#divMain2 p => tất cả thẻ p nằm trong phần tử có id là divMain2 sẽ được áp dụng</li>
+        <li>.khoi p => Tất cả thẻ p nằm trong phần tử có class là khoi sẽ được áp dụng</li>
+        <li>div a => tất cả thẻ a nằm trong thẻ div sẽ được áp dụng</li>
+        <li>div > a => tất cả thẻ a là con TRỰC TIẾP của thẻ div sẽ được áp dụng</li>
+        <li>#divMain > p => tất cả thẻ p là con trực tiếp của phần tử có id là divMain sẽ được áp dụng</li>
+    </ul>
+</body>
+</html>
