@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Ôn tập</h1>
+    <h2 class="title">Tag name, id, class:</h2>
+    <p id="firstP">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, optio!</p>
+    <ul class="final">
+        <li>h1 => tất cả thẻ h1 được chọn</li>
+        <li>.title => tất cả phần tử có class là title sẽ được chọn</li>
+        <li>#firstP => phần tử có id là firstP sẽ được chọn</li>
+    </ul>
+    <h2 class="title after"> * Selector và element.class</h2>
+    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, rem?</p>
+    <ul class="final">
+        <li>* => chọn toàn bộ phần tử</li>
+        <li>.title.after => tất cả những phần có cả 2 class title và after sẽ được áp dụng</li>
+        <li>p.text => tất cả phần tử p có class là text sẽ được chọn</li>
+    </ul>
+    <h2 class="title"> element,element CLASS1.class2</h2>
+    <P id="secondP">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</P>
+    <h5>Lorem ipsum dolor sit.</h5>
+    <h3>hihihi</h3>
+    <ul class="final">
+        <li>#secondP, h5 => phần tử có id là secondP và tất cả thẻ h5 sẽ đc áp dụng</li>
+        <li>h5, h3 => toàn bộ thẻ h5 và thẻ h3 sẽ được áp dụng</li>
+    </ul>
+    <h2 class="title">Space element_element</h2>
+    <p class="noidung">Nội dung là: ...</p>
+    <div>
+        <p class="noidung">Hello world</p>
+        <p class="noidung">Xin chào thế giới</p>
+        <section>
+            <p class="noidung">Trong thẻ section</p>
+        </section>
+    </div>
+    <ul class="final">
+        <li>div p => tất cả thẻ p trong thẻ div sẽ được áp dụng</li>
+        <li>div > p => tất cả thẻ p là con trực tiếp của thẻ div</li>
+        <li>section p => tất cả thẻ p nằm trong thẻ section</li>
+    </ul>
+    <h2 class="title title2">element+element element~element</h2>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div></div>
+    <ul class="final">
+        <li>.title.title2 ~ div => tất cả thẻ div nằm phía sau phần tử có 2 class là title và title2</li>
+        <li>.title.title2 + div => tất cả thẻ div năm ngay sau sát phần tử có 2 class là title và title2</li>
+        <li>.title.title2 + div + div => tất cả thẻ div nằm sát ngay sau thẻ div nằm sát ngay sau phần tử có 2 class là title và title2</li>
+    </ul>
+</body>
+</html>

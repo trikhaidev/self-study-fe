@@ -1,0 +1,62 @@
+h1 {
+    color: brown;
+    text-align: center;
+    text-decoration: underline;
+}
+.title {
+    color: blue;
+}
+
+#firstP{
+    background-color: bisque;
+}
+
+.final{
+    color: red;
+}
+
+.title.after{
+    margin-top: 50px;
+    background-color: beige;
+}
+
+p.text{
+    text-align: end;
+}
+
+#secondP, h5{
+    text-align: center;
+    color: darkgreen;
+}
+
+h5, h3{
+    text-decoration: underline;
+}
+
+div p{
+    color: darkorange;
+}
+
+div > p{
+    font-style: italic;
+}
+
+section p{
+    background-color: antiquewhite;
+}
+
+.title.title2 ~ div{
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    border: 5px solid black;
+    margin-bottom: 10px;
+}
+
+.title.title2 + div{
+    background-color: blue;
+}
+
+.title.title2 + div + div{
+    background-color: red;
+}
