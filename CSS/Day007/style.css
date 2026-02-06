@@ -1,0 +1,15 @@
+[title]{
+    color: red;
+}
+
+[title~="trang"]{
+    background-color: aquamarine;
+}
+
+[title*="trang"]{
+    font-size: 50px;
+}
+
+hr ~ ul{
+    color: red;
+}
