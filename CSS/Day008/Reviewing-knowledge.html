@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reviewing-knowledge.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="main-title">Ôn tập Atribute Css Selector</h1>
+    <hr>
+    <a href="" title="hello world">Hello world</a>
+    <br>
+    <a href="" title>Hello world</a>
+
+    <hr>
+
+    <input type="text" placeholder = "E Hay Nhap Di 1"/>
+    <br>
+    <input type="number" placeholder="Hay-Nhap-Di 2">
+    <br>
+    <input type="number" placeholder="HayNhapDi 3">
+    <p id="tachbiet"></p>
+    <ul>
+            <li>#main-title => phần tử có id là #main-title sẽ được áp dụng</li>
+            <li>[title] => phần tử có thuộc tính là title sẽ được áp dụng</li>
+            <li>[title = "hello world"] => phần tử có thuộc tính title có giá trị là hello world sẽ được áp dụng</li>
+            <li>[type="text"] => phần tử có thuộc tính type có giá trị là text sẽ được áp dụng</li>
+            <li>[type="number"] => phần tử có thuộc tính type có giá trị là number sẽ được áp dụng</li>
+            <li>[placeholder ~= "Nhap"] => phần tử có chứa từ Nhap (trước và sau từ Nhap phải là khoảng trắng hoặc không có gì) sẽ được áp dụng</li>
+            <li>[placeholder *= "Nhap"] => phần tử có thuộc tính placeholder có chứa giá trị là chuỗi Nhap (chỉ có chưa CHUỖI Nhap trong giá trị) sẽ được áp dụng</li>
+            <li>[placeholder |= "Hay"] => Phần tử có thuộc tính là placeholder có giá trị bắt đầu bằng từ Hay và phía sau không có gì hoặc được nối bằng dấu gạch - sẽ được áp dụng</li>
+            <li>[placeholder ^= "Hay"] => phần tử có thuộc tính placeholder có giá trị bắt đầu bằng CHUỖI Hay (không quan tâm phía sau) sẽ được áp dụng</li>
+            <li>[placeholder $= " 3"] => phần tử có thuộc tính là "placeholder" có giá trị kết thúc bằng " 3" sẽ được áp dụng</li>
+            <li>#tachbiet~ul => toàn bộ thẻ ul nằm phía sau thẻ có id là tachbiet sẽ được áp dụng (phải cùng 1 thẻ cha)</li>
+        </ul>
+</body>
+</html>

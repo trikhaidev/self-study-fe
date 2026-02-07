@@ -18,3 +18,8 @@ a{
 a[title|="hello"][title$="3"] + ul{
     color: red;
 }
+
+h1 a{
+    margin-top: 0px;
+    display: inline;
+}

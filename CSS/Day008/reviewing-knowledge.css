@@ -1,0 +1,46 @@
+#main-title{
+    color: darkgreen;
+    text-align: center;
+}
+
+[title]{
+    color: red;
+}
+
+[title = "hello world"]{
+    background-color: yellow;
+}
+
+[type="text"]{
+    color: darkgreen;
+}
+
+[type="number"]{
+    color: darkorange;
+}
+
+[placeholder ~= "Nhap"]{
+    padding: 10px;
+}
+
+[placeholder *= "Nhap"]{
+    margin-top: 10px;
+    background-color: aqua;
+    border-color: brown;
+}
+
+[placeholder |= "Hay"]{
+    margin-left: 100px;
+}
+
+[placeholder ^= "Hay"]{
+    border-radius: 10px 10px;
+}
+
+[placeholder $= " 3"]{
+    height: 100px;
+}
+
+#tachbiet~ul{
+    color: red;
+}
