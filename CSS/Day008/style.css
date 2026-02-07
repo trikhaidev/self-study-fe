@@ -1,0 +1,20 @@
+a{
+    margin-top: 10px;
+    display: block;
+}
+
+[title|="hello"]{
+    background-color: aquamarine;
+}
+
+[title ^= "hello"]{
+    text-decoration: none;
+}
+
+[title $= "2"]{
+    color: darkgoldenrod;
+}
+
+a[title|="hello"][title$="3"] + ul{
+    color: red;
+}

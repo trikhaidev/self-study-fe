@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <a href="" title="hello world 1">Hello world</a>
+    <a href="" title="holahelloworld 2">Hello world</a>
+    <a href="" title="hello-world 3">Hello world</a>
+    <ul>
+        <li>a => toàn bộ thẻ a sẽ được áp dụng</li>
+        <li>[title|="hello"] => thẻ có thuộc tính title có giá trị bắt đầu bằng hello (k có kí tự phía sau hoặc nếu có thì phải đc nối bằng dấu -) sẽ được áp dụng</li>
+        <li>[title ^= "hello"] => toàn bộ thẻ có thuộc tính title có giá trị bắt đầu bằng chuỗi hello sẽ được áp dụng</li>
+        <li>[title $= "2"] => toàn bộ thẻ có thuộc tính title có giá trị kết thúc bằng 2 sẽ được áp dụng</li>
+        <li>
+            a[title|="hello"][title$="3"] + ul => thẻ ul ngay sau thẻ a có thuộc tính title có giá trị bắt đầu bằng hello (k có kí tự phía sau hoặc nếu có thì phải đc nối bằng dấu -)
+            và kết thức bằng kí tự 3 sẽ được áp dụng
+        </li>
+    </ul>
+</body>
+</html>
