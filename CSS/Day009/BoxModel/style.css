@@ -1,0 +1,40 @@
+h1{
+    text-align: center;
+    color: darkgreen;
+}
+
+div{
+    width: 250px;
+    height: 250px;
+    background-color: pink;
+    color: red;
+    margin-bottom: 20px;
+}
+
+
+#div1{
+    padding: 10px;
+}
+
+
+#div2{
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
+
+#div3{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#div4{
+    padding: 25px 30px;
+}
+
+#div4 ~ ul{
+    color: red;
+}
+
+#final{
+    padding: 10px 5px;
+}
