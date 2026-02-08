@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ôn tập CSS SELECTOR (<a href="#final">Click vào đây để xem kết luận</a>)</h1>
+    <div>
+        <p id="firstP">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, dolorum?
+        </p>
+    </div>
+    <br>
+    <div class="section">
+        <p>Lorem ipsum dolor sit amet similique dolor sequi? Obcaecati, assumenda maxime eum quia quis aut commodi minus totam. Voluptate numquam tempore maiores.</p>
+    </div>
+    
+    <div class="section custom">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, reiciendis.</p>
+        <p class="result">Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <div class="section">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, expedita.</p>
+        <p class="result">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ipsa hic nam magni nisi repellendus consectetur expedita beatae libero saepe!</p>
+    </div>
+    <hr>
+    <ul class="result" id="final">
+        <li>h1 => toàn bộ thẻ h1 sẽ được áp dụng</li>
+        <li>h1 + div => toàn bộ thẻ div nằm sát ngay sau thẻ h1 sẽ được áp dụng</li>
+        <li>#firstP => thẻ có id là firstP sẽ được áp dụng</li>
+        <li>div p => toàn bộ thẻ p nằm trong thẻ div sẽ được áp dụng</li>
+        <li>.section => toàn bộ thẻ có class là section sẽ được áp dụng</li>
+        <li>.section > p => toàn bộ thẻ p là con trực tiếp của thẻ có class là section sẽ được áp dụng</li>
+        <li>.section.custom => phần tử có 2 class section và custom sẽ được áp dụng</li>
+        <li>p.result => toàn bộ thẻ p có class là result sẽ được áp dụng</li>
+        <li>.result => toàn bộ thẻ có class là result sẽ được áp dụng</li>
+        <li>h1 > a => toàn bộ thẻ a là con trực tiếp của thẻ h1 sẽ được áp dụng</li>
+        <li>hr ~ ul => toàn bộ thẻ ul đồng cấp, nằm phía sau và cùng thẻ cha với thẻ hr sẽ được áp dụng</li>
+    </ul>
+</body>
+</html>
