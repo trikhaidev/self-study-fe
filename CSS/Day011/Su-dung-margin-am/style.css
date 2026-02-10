@@ -1,0 +1,18 @@
+.container{
+    background-color: bisque;
+    height: 300px;
+}
+
+.avarta{
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.a2{
+    margin-left: -50px;
+}
+
+.a3{
+    margin-left: -50px;
+}
