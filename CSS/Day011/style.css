@@ -1,0 +1,19 @@
+.container{
+    margin: 20px auto;
+    width: 550px;
+    height: 80vh;
+    background-color: yellow;
+    text-align: center;
+}
+
+.container h1{
+    color: red;
+}
+
+.container > p{
+    line-height: 1.5;
+}
+
+.container img{
+    max-width: 350px;
+}
