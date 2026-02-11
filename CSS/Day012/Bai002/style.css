@@ -1,0 +1,23 @@
+h1{
+    background-color: aqua;
+    color: blue;
+}
+
+div{
+    background-color: yellow;
+    height: 400px;
+    margin-top: 50px;
+}
+
+div h3{
+    color: red;
+    margin-top: 100px;
+}
+
+ul{
+    color: red;
+}
+
+div{
+    padding-bottom: 20px;
+}

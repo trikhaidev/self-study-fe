@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Margin Collapse</h1>
+    <div>
+        <h3>Nội dung trong thẻ cha</h3>
+    </div>
+    <hr>
+    <ul>
+        <li>Với trường hợp 2 phần tử cùng set margin 1 chiều và 1 trong 2 phần tử là con của phần tử còn lại thì margin của phần tử nào lớn hơn sẽ được áp dụng</li>
+        <li>Ví dụ: h3 là con của div và cả 2 đều set margin-top lần lượt là 80px và 50px, kết quả thẻ div sẽ cách thẻ h1 ở trên 1 khoảng 80px. Ngược lại nếu margin của thẻ div là 100px và margin của h3 là 50px thì kết quả thẻ div sẽ cách h1 ở trên 1 khoảng 100px</li>
+        <li>Cách khắc phục: có thể set display của thẻ div thành flex và set flex-direction = column. Kết quả margin-top của thẻ div là bao nhiêu thì nó sẽ cách h1 ở trên đúng như v, còn margin của thẻ h3 sẽ cách viền nội dung của thẻ div 1 khoảng đúng với margin mà nó được set</li>
+        <li>Lưu ý quan trọng: chỉ cần thẻ cha có set padding cùng hướng với margin đang bị collapse thì lúc này hiện tượng collapse sẽ biến mất. Kết quả thẻ chả cha sẽ cách phần tử phía trên 1 khoảng đúng vs giá trị mà nó đc set, còn thẻ con ở trong sẽ cách phần padding của thẻ cha đúng 1 khoảng margin mà nó đc set</li>
+    </ul>
+</body>
+</html>
