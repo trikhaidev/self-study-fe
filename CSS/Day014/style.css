@@ -1,0 +1,13 @@
+ul{
+    color: red;
+}
+
+strong{
+    background-color: yellow;
+    padding: 100px;
+    /* border: 100px solid black; */
+    /* margin: 400px; */
+
+    /* display: block; */
+    display: inline-block;
+}
