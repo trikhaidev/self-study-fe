@@ -1,0 +1,28 @@
+a{
+    padding: 20px 36px;
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    border-radius: 60px;
+    display: inline-block;
+}
+
+#youtube{
+    background-color: red;
+}
+
+#facebook{
+    background-color: rgb(65, 65, 247);
+}
+
+#youtube:hover{
+    background-color: blue;
+}
+
+#facebook:hover{
+    background-color: red;
+}
+
+#youtube:active{
+    background-color: yellow;
+}
