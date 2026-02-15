@@ -7,6 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="header">
+        <div class="container">
+            <div class="box box1"></div>
+            <div class="box box2"></div>
+            <div class="box box3"></div>
+        </div>
+    </div>
+
+    <ul>
+        <li>Absolute: Khi đặt giá trị position thành Absolute thì phần tử sẽ thực sự được nâng lên một tầng mới, nó sẽ không chiếm không gian ở vị trí cũ nữa (xem như chưa từng có nó tồn tại ở vị trí cũ).</li>
+        <li>Khi đặt là Absolute thì phần tử sẽ căn neo theo thẻ cha có position là relative gần nhất (nếu có nhiều hơn 1 thẻ cha có position là relative thì nó sẽ chọn thẻ gần nhất). Trường hợp không có thẻ cha nào có position là relative thì nó sẽ căn neo corner webpage</li>
+        <li>Lưu ý: vẫn có thể set margin cho các phần tử có position là Absolute. Khi này margin sẽ tính theo vị trí top, right, bottom, left đc set</li>
+        <li>Vd: top: 50px thì phần tử sẽ bị dịch xuống một khoảng là 50px so với vị trí của thẻ cha. Nếu set thêm margin-top là 100px thì tính từ vị trí top: 50px kia, phần tử sẽ thụt xuống một khoảng 100px nữa</li>
+        <li>Trường hợp set top nhưng lại để margin-bottom thì sẽ k có tác dung, nguyên nhân là do phần tử k có neo theo bottom (không xác định đc bottom coi như là k có gì ở bottom)</li>
+    </ul>
 </body>
 </html>
