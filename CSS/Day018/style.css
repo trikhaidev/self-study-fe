@@ -15,7 +15,7 @@
 }
 
 .header ul li{
-    padding: 20px 15px;
+    /* padding: 20px 15px; */
     display: inline-block;
 }
 
@@ -29,4 +29,16 @@ h1{
     position: fixed;
     bottom: 25px;
     right: 10px;
+}
+a{
+    display: inline-block;
+    padding: 20px 15px;
+    text-decoration: none;
+}
+a[href="#final"]{
+    color: darkred;
+}
+
+#final{
+    color: red;
 }
