@@ -1,0 +1,13 @@
+div{
+    height: 500px;
+    width: 500px;
+    background-color: aqua;
+    overflow: scroll;
+}
+
+h1{
+    background-color: red;
+    position: sticky;
+    bottom: 0px;
+    top: 0px;
+}
