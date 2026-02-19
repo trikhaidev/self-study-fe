@@ -1,0 +1,13 @@
+.content{
+    margin: auto;
+    background-color: aqua;
+    width: 500px;
+    height: 650px;
+    overflow: auto;
+}
+
+.content > ul h3{
+    background-color: orange;
+    position: sticky;
+    top: 0px;
+}
