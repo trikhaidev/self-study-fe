@@ -11,3 +11,19 @@
     position: sticky;
     top: 0px;
 }
+
+div img{
+    margin: 20px;
+    width: 250px;
+    float: left;
+}
+
+div > img + img{
+    margin: 20px;
+    width: 250px;
+    float: right;
+}
+
+.secondP{
+    clear: both;
+}
