@@ -27,3 +27,7 @@ div > img + img{
 .secondP{
     clear: both;
 }
+
+hr + ul{
+    color: red;
+}
