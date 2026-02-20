@@ -1,0 +1,14 @@
+.container{
+    background-color: lightskyblue;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.container > div{
+    border: 5px solid rgb(230, 47, 47);
+    background-color: lightcoral;
+    width: 100px;
+    height: 100px;
+}
