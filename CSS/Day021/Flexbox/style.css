@@ -1,14 +1,25 @@
 .container{
     background-color: lightskyblue;
-
+    height: 500px;
     display: flex;
 
     justify-content: center;
+
+    /* align-items: flex-start; */
+    /* align-items: flex-end; */
+    align-items: center;
+    /* align-items: stretch; */
+    /* align-items: baseline; */
 }
 
 .container > div{
     border: 5px solid rgb(230, 47, 47);
     background-color: lightcoral;
     width: 100px;
+    /* height: 100px; */
+}
+
+.box1{
     height: 100px;
+    font-size: 30px;
 }
