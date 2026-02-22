@@ -8,13 +8,13 @@
     flex-wrap: wrap;
     /* flex-wrap: wrap-reverse; */
 
-    align-content: stretch;
+    /* align-content: stretch; */
     /* align-content: flex-start; */
     /* align-content: flex-end; */
     /* align-content: space-between; */
     /* align-content: space-around; */
     /* align-content: space-evenly; */
-    /* align-content: center; */
+    align-content: center;
     /* align-content: baseline; */
     
     align-items: baseline;
