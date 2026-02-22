@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="firstDiv">Khối 1</div>
+        <div>Khối 2</div>
+        <div>Khối 3</div>
+        <div>Khối 4</div>
+        <div>Khối 5</div>
+        <div>Khối 6</div>
+        <div>Khối 7</div>
+    </div>
+    <hr>
+    <ul>
+        <li>Mặc định flex-wrap sẽ có value là nowrap =>  các phần tử sẽ vẫn nằm trên cùng một hàng dù cho tổng kích thước các phần tử lớn hơn chiều rộng của thẻ chứa nó (nếu kích thước các phần tử lớn hơn thẻ chứa nó thì kích thước của các phần tử sẽ bị giảm đi để làm sao các phần tử vẫn nằm trên cùng 1 hàng)</li>
+        <li>flex-wrap: wrap-reverse => các phần tử vẫn sẽ xuống dòng, tuy nhiên trục cross axis sẽ đảo chiều (cross start sẽ xuống dưới và cross end sẽ lên trên)</li>
+        <li>align-content: value mặc định là stretch => các phần tử sẽ được kéo dãn để làm sao tổng chiều cao của các phần tử sẽ bằng chiều cao của thẻ chứa nó. Nếu các phần tử đã được xác định rõ ràng chiều cao thì vị trí các phần tử sẽ được điều chỉnh để phù hợp vs chiều cao của thẻ chưa nó (cần tự trải nghiệm để hiểu rõ)</li>
+        <li>align-items => dùng để căn chỉnh các phần tử theo cùng một dòng</li>
+        <li>bonus: có thể kết hợp align-content và align-items để căn chỉnh theo giá trị là baseline</li>
+    </ul>
+</body>
+</html>

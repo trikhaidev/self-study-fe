@@ -1,0 +1,42 @@
+.container{
+    background-color: rgb(37, 63, 63);
+    width: 500px;
+    height: 900px;
+    display: flex;
+
+    /* flex-wrap: nowrap; */
+    flex-wrap: wrap;
+    /* flex-wrap: wrap-reverse; */
+
+    align-content: stretch;
+    /* align-content: flex-start; */
+    /* align-content: flex-end; */
+    /* align-content: space-between; */
+    /* align-content: space-around; */
+    /* align-content: space-evenly; */
+    /* align-content: center; */
+    /* align-content: baseline; */
+    
+    align-items: baseline;
+
+    justify-content: flex-end;
+}
+
+.container div{
+    background-color: red;
+    width: 96px;
+    height: 96px;
+    border: 2px solid yellow;
+
+    /* margin-right: 25px; */
+}
+
+#firstDiv{
+    background-color: blue;
+    /* height: 50px; */
+    font-size: 27px;
+}
+
+ul{
+    color: red;
+}
