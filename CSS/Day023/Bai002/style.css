@@ -1,0 +1,29 @@
+.container{
+    background-color: rgb(25, 41, 41);
+    width: 500px;
+    height: 500px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    /* align-content: stretch; */
+    /* align-content: flex-end; */
+
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column-reverse; */
+    flex-direction: row;
+}
+
+.container div{
+    background-color: brown;
+    border: 2px solid yellow;
+
+    width: 96px;
+    /* height: 96px; */
+}
+
+ul{
+    color: red;
+}
