@@ -1,0 +1,24 @@
+.container{
+    background-color: rgb(71, 122, 105);
+    width: 500px;
+    height: 700px;
+
+    display: flex;
+
+    /* flex-wrap: wrap; */
+
+    /* flex-direction: column-reverse; */
+
+    flex-flow: wrap column-reverse;
+
+    justify-content: flex-end;
+
+    align-content: flex-end;
+}
+
+.container div{
+    background-color: brown;
+    border: 2px solid yellow;
+    width: 96px;
+    height: 96px;
+}
