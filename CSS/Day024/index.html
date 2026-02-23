@@ -29,6 +29,7 @@
         <li>flex-direction - row-reverse: main axis vẫn sẽ nằm ngang, tuy nhiên vị trí main-start và main-end sẽ hoán đổi cho nhau. Khi này main-start sẽ nằm bên phải và main-end sẽ nằm bên trái</li>
         <li>flex-direction - column: main axis sẽ nằm dọc, main-start bên trên và main-end phía dưới</li>
         <li>flex-direction - column-reverse: main axis vẫn sẽ nằm dọc, tuy nhiên main-start và main-end sẽ hoán đổi cho nhau. Khi này main-start sẽ nằm phía dưới còn main-end sẽ nằm phía trên</li>
+        <li>Lưu ý: flex-direction không thể hoán đổi cross-start và cross-end cho nhau. Nếu muốn hoán đổi thì phải dùng flex-wrap với value là wrap-reverse. Điều này có nghĩa là ngay cả khi dùng flex-direction để biên main axis nằm dọc thì dù giá trị có là column hay column-reverse thì cross-start vẫn sẽ nằm mặc định bên trái và cross-end bên phải (nếu không dùng flex-wrap: wrap-reverse)</li>
     </ul>
 </body>
 </html>
