@@ -17,5 +17,18 @@
         <div>Khối 7</div>
         <div>Khối 8</div>
     </div>
+    <hr>
+    <ul>
+        <li>main-start và main-end: mục đích chính là để sắp xếp vị trí flex phần tử, như kiểu phần tử thứ 1 sẽ nằm ở hướng nào rồi sau đó đến phần tử thứ 1,2,3.</li>
+        <li>justify-content: mục đích chính là để xác định điểm neo của các phần tử. Chúng ta có thể cho nó neo vào main-start hoặc main-end, tuy nhiên sẽ không thể làm thay đổi thứ tự của các phần tử được sắp xếp</li>
+        <li>cross-start và cross-end: cũng giống như main-start và mainn-end, mục đích chính của nó là để xác định thứ tự sắp xếp các dòng</li>
+        <li>align-items và align-content: mục đích chính là để xác định điểm neo của các dòng theo cross-start và cross-end, tuy nhiên sẽ không thẻ làm thay đổi thứ tự của các dòng</li>
+        <li>muốn hoán đổi vị trí của cross-start và cross-end thì dùng flex-wrap với value là wrap-reverse</li>
+        <li>flex-direction: mục đích là để xác định hướng của main-axis</li>
+        <li>flex-direction - row: là value mặc định, main axis sẽ nằm ngang, main-start bên trái và main-end bên phải</li>
+        <li>flex-direction - row-reverse: main axis vẫn sẽ nằm ngang, tuy nhiên vị trí main-start và main-end sẽ hoán đổi cho nhau. Khi này main-start sẽ nằm bên phải và main-end sẽ nằm bên trái</li>
+        <li>flex-direction - column: main axis sẽ nằm dọc, main-start bên trên và main-end phía dưới</li>
+        <li>flex-direction - column-reverse: main axis vẫn sẽ nằm dọc, tuy nhiên main-start và main-end sẽ hoán đổi cho nhau. Khi này main-start sẽ nằm phía dưới còn main-end sẽ nằm phía trên</li>
+    </ul>
 </body>
 </html>
