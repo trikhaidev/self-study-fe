@@ -4,6 +4,8 @@
     height: 600px;
 
     display: flex;
+
+    align-items: center;
 }
 
 .container > div{
@@ -15,10 +17,12 @@
 
 #box1,#box2{
     flex-grow: 1;
+    align-self: flex-end;
 }
 
 #box3{
     flex-grow: 2;
+    align-self: flex-start;
 }
 
 ul{
