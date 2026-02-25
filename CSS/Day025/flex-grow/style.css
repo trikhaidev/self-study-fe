@@ -6,11 +6,11 @@
     display: flex;
 }
 
-.container div{
+.container > div{
     background-color: blueviolet;
-    border: 2px solid yellow;
-    width: 96px;
-    height: 96px;
+    /* border: 2px solid yellow; */
+    /* width: 100px; */
+    /* height: 96px; */
 }
 
 #box1,#box2{

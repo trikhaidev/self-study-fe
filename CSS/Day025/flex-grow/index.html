@@ -8,14 +8,20 @@
 </head>
 <body>
     <div class="container">
-        <div id="box1">Khối 1</div>
-        <div id="box2">Khối 2</div>
-        <div id="box3">Khối 3</div>
+        <div id="box1">
+            <div style="width: 15px; height: 5px;background-color: yellow;"></div>
+        </div>
+        <div id="box2">
+            <div style="width: 8px; height: 5px;background-color: yellow"></div>
+        </div>
+        <div id="box3">
+            <div style="width: 9px; height: 5px;background-color: yellow"></div>
+        </div>
     </div>
     <ul>
         <li>flex-grow: dùng để xác định tỉ lệ của các phần tử trên main axis</li>
         <li>Lưu ý: mặc dù các phần tử đã được set cứng width, tuy nhiên nó vẫn sẽ bị flex-grow ghi đè</li>
-        <li>Cần tìm hiểu kĩ cách tính toàn kích thước width của các phần tử khi sử dụng flex-grow</li>
+        <li>Kích thước của phần tử khi sử dụng flex-grow: (((width của phần tử cha trừ tổng width nội dung của các phần tử con) / tổng số flex-grow) * flex-grow của phần tử) + width của nội dung phần tử</li>
     </ul>
 </body>
 </html>
