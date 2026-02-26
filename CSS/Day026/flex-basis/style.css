@@ -1,0 +1,23 @@
+.container{
+    background-color: rgb(73, 122, 106);
+    padding: 25px;
+    width: 50%;
+    height: 500px;
+    display: flex;
+
+    flex-flow: nowrap row;
+
+    align-items: stretch;
+}
+
+.container > div{
+    background-color: brown;
+    border: 2px solid yellow;
+    height: 96px;
+    width: 96px;
+    flex-basis: 33%;
+}
+
+ul{
+    color: red;
+}
