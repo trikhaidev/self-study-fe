@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="box1">Khối 1</div>
+        <div id="box2">Khối 2</div>
+        <div id="box3">Khối 3</div>
+    </div>
+    <hr>
+    <ul>
+        <li>flex-grow: chỉ hoạt động khi tổng kích thước các phẩn tử con nhỏ hơn kích thước nội dụng của phần tử cha</li>
+        <li>flex-shrink: chỉ hoạt động khi tổng kích thước các phần tử con lớn kích thước nội dung của phần tử cha</li>
+        <li>flex-shrink càng lớn thì phần tử sẽ bị co lại càng nhiều và nếu set flex-shrink là 0 thì phần tử sẽ không bị co lại</li>
+        <li>flex-grow và flex-shrink không mâu thuẫn, không xung đột với nhau, tuy vào trường hợp mà chỉ flex-gow sẽ được áp dụng và tùy vào trường hợp mà chỉ flex-shrink mới được áp dụng</li>
+        <li>Lưu ý: flex-shrink: nếu k có giá trị thì mặc định sẽ là 1 và nếu kích thước của phần tử có bị co lại thì cũng chỉ đến mức nhất định, không co lại mãi mãi (chi đến mức vẫn còn có thể giữ đúng cấu trúc nội dung bên trong)</li>
+    </ul>
+</body>
+</html>

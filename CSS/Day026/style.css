@@ -1,0 +1,30 @@
+.container{
+    background-color: rgb(73, 122, 106);
+    padding: 25px;
+    width: 252px;
+    height: 500px;
+    display: flex;
+}
+
+.container > div {
+    background-color: brown;
+    border: 2px solid yellow;
+    width: 96px;
+}
+
+#box1,#box2{
+    flex-grow: 1;
+}
+
+#box1{
+    flex-shrink: 2;
+}
+
+#box3{
+    flex-grow: 3;
+    flex-shrink: 0;
+}
+
+ul{
+    color :red;
+}
