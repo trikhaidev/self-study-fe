@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="box1">
+            <!-- <div style="background-color: aqua;width: 5px;height: 5px;"></div> -->
+            Khối 1
+        </div>
+        <div id="box2">
+            <!-- <div style="background-color: aqua;width: 5px;height: 5px;"></div> -->
+            Khối 2
+        </div>
+        <div id="box3">
+            <!-- <div style="background-color: aqua;width: 5px;height: 5px;"></div> -->
+            Khối 3
+        </div>
+    </div>
+    <div style="background-color: aqua;width: 50px;height: 50px;padding: 1px;">
+        <div style="background-color: rgb(101, 165, 41);width: 60px;height: 20px;margin-top: 25px;">
+        
+        </div>
+    </div>
+    <ul>
+        <li>khi sử dụng flex-basic thì kích thước phần tử (width hoặc height) được xác định theo trục main axis, và thuộc tính này sẽ ghi đè giá trị width hoặc height của phần tử</li>
+        <li>Lưu ý: khi tất cả các phần tử trong container đề sử dụng flex-basic với value theo % thì thuộc tính flex-shrink và flex-grow sẽ không còn tác dụng vì kích thước của phần tử bây giờ đã ăn theo kích thước của trục main axis</li>
+        <li>Lưu ý: khi sử dụng display: flex thì kích thước các phần tử con có thể bị co lại nếu kích thước nội dung của container không đủ để chứa. Còn khi không sử dụng display:flex (default value) thì kích thước phần tử con có thể vượt ra ngoài kích thước phần tử container</li>
+        <li><hr></li>
+        <li>order dùng để thay đổi vị trí sắp xếp các phần tử, default value là 0. Nếu 2 phần tử có cùng giá trị order thì việc sắp xếp sẽ giựa vào vị trí của chúng được ở trên html</li>
+    </ul>
+    <div style="width: 500px; height: 500px;background-color: black;">
+
+    </div>
+</body>
+</html>

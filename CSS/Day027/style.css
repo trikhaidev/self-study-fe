@@ -1,0 +1,51 @@
+.container{
+    background-color: rgb(69, 105, 105);
+    height: 500px;
+    width: 50%;
+    display: flex;
+}
+
+.container > div{
+    background-color: brown;
+    border: 2px solid yellow;
+    width: 96px;
+    height: 96px;
+
+    /* flex-shrink: 0; */
+}
+
+#box1{
+    color: white;
+    order: 1;
+}
+
+#box2{
+    color: lightblue;
+    /* order: 0; */
+}
+
+#box3{
+    color: yellow;
+    order: 2; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ul{
+    color: red;
+}
