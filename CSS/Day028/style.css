@@ -1,0 +1,49 @@
+.container{
+    background-color: rgb(34, 104, 104);
+    width: 500px;
+    height: 500px;
+
+    display: flex;
+
+    flex-wrap: wrap-reverse;
+
+    justify-content: flex-end;
+
+    align-content: stretch;
+
+    align-items: flex-end;
+
+    flex-direction: row;
+}
+
+.container > div{
+    background-color: brown;
+    border: 2px solid yellow;
+    width: 96px;
+    height: 96px;
+}
+
+#box4{
+    flex-basis: 200px;
+}
+
+#box3{
+    align-self: flex-start;
+
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+#box2{
+    order: 1;
+}
+
+
+
+
+
+
+
+ul{
+    color: red;
+}
