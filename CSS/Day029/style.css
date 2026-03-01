@@ -1,0 +1,31 @@
+.ot-flex-box{
+    background-color: aqua;
+    width: 50%;
+    height: 500px;
+}
+
+.ot-flex-box > h3{
+    text-align: center;
+    color: tomato;
+}
+
+.container{
+ background-color: lightpink;
+ height: 450px;
+ display: flex;
+ flex-flow: wrap row;
+ justify-content: flex-start;
+ align-content: stretch;
+ align-items: flex-end;
+}
+
+.container > .item{
+    background-color: tomato;
+    width: 96px;
+    height: 96px;
+    border: 2px solid yellow;
+}
+
+.item3{
+    align-self: flex-start;
+}
