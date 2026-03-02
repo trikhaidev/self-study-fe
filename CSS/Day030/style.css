@@ -1,0 +1,44 @@
+.container{
+    background-color: rgb(14, 92, 92);
+    width: 50%;
+    height: 700px;
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(30px, 120px));
+    grid-template-rows: 100px auto auto;
+
+    /* grid-auto-rows: 35px; */
+
+    /* grid-row-gap: 25px;
+    grid-column-gap: 30px; */
+
+    gap: 10px 10px;
+}
+
+.container > div{
+    background-color: rgb(110, 43, 43);
+    color: yellow;
+    border: 2px solid yellow;
+    /* width: 96px; */
+    /* height: 96px; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box1{
+    z-index: 1;
+}
+
+#box2{
+    width: 96px;
+}
+
+#box5{
+    height: 50px;
+}
+
+ul{
+    color: red;
+}

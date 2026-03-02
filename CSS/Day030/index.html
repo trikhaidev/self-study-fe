@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="box1">Khối 1</div>
+        <div id="box2">Khối 2</div>
+        <div id="box3">Khối 3</div>
+        <div id="box4">Khối 4</div>
+        <div id="box5">Khối 5</div>
+        <div id="box6">Khối 6</div>
+    </div>
+    <ul>
+        <li>grid dùng để chia giao diện thành khung lưới để tiện cho việc bố trí layout</li>
+        <li>dùng grid-template-columns để căn chỉnh kích thước các cột</li>
+        <li>dùng grid-template-rows để các chỉnh kích thước các dòng</li>
+        <li>dùng grid-column-gap để căn chỉnh khoảng cách giữa các cột</li>
+        <li>dùng grid-row-gap để căn chỉnh khoảng cách giữa các dòng</li>
+        <li>Bonus: chúng ta có thể kết grid-column-gap và grid-row-gap bằng cách sử dụng thuộc tính viết tắt là gap và truyền vào 1 hoặc 2 đối số</li>
+        <li>Khi đã có cột và hàng thì chúng ta sẽ có các grid cell: mặc định nếu không set kích thước cho item thì kích thước item mặc định sẽ bằng kích thước của grid cell. Nếu set kích thước item lớn hơn kích thước grid cell thì item có thể vượt ra ngoài.</li>
+        <li>khi cài đặt kích thước cho các hàng và cột chúng ta có thể repeat để set các giá trị lặp lại. Vd: repeat(3,50px) 3 hàng hoặc 3 cột tiếp theo sẽ có giá trị là 50px</li>
+        <li>Chúng ta có thể sử dụng minmax(minValue,maxValue) (có thể dùng kèm với repeat) để cái đặt kích thước tối thiểu và tối đa cho các cột hoặc dòng khi kích thước màn hình thay đổi</li>
+        <li>Đối với những dòng chúng ta k cài đặt kích thước dòng thì chúng ta có thể set kích thước mặc định cho nó bằng thuộc tính grid-auto-rows</li>
+        <li>Khi set kích thước cột hoặc dòng là auto thì kích thước của cột hoặc dòng sẽ chiếm hết phần không gian còn lại. Đặc biết là với dòng, nếu kích thước height container không được xác định thì kích thước dòng chỉ to bằng kích thước height của item, nhưng nếu kích thước của height container được xác định thì kích thước dòng còn lại (auto) sẽ luôn chiếm hết phần còn lại</li>
+    </ul>
+</body>
+</html>
