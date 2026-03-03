@@ -15,7 +15,25 @@
         <div id="box4">Khối 4</div>        
         <div id="box5">Khối 5</div>        
         <div id="box6">Khối 6</div>        
+        <div id="box7">Khối 7</div>        
+        <div id="box8">Khối 8</div>        
+        <div id="box9">Khối 9</div>        
+        <div id="box10">Khối 10</div>        
+        <div id="box11">Khối 11</div>        
     </div>
-    <a href="https://youtu.be/LZqlqNg6DG8?t=736">Time hiện tại</a>
+    <ul>
+        <li>row-lines chỉ đếm các dòng được set value trong thuộc tính grid-template-rows (nếu set value cho 3 rows thì sẽ vĩnh viễn chỉ có 6 dòng kẻ[6 row lines]). Như vậy với các dòng tự phát sinh thêm (có thể do số lượng item tăng lên) thì sẽ không được đếm theo chiều âm, còn chiều dương thì sẽ đếm đủ kể cả các lines của các dòng phát sinh thêm</li>
+        <li>sử dụng grid-row: valueStart/valueEnd để viết tắt thay vì viết tường mình grid-row-start: valueStart; grid-row-end: valueEnd;</li>
+        <li>sử dụng grid-column: valueStart/valueEnd để viết tắt thay vì viết tường minh grid-column-start: valueStart; grid-column-end: valueEnd;</li>
+        <li>Hoặc có thể dụng grid-area để set nhanh với các param sau => grid-area: rowStart / columnStart / rowEnd / columnEnd</li>
+        <li>Lưu ý: riêng 2 thằng grid-row và grid -column thì cú pháp phải có dấu / để ngăn cắt valueStart và valueEnd</li>
+    </ul>
+    <hr>
+    <ul>
+        <li>Lưu ý 1: khi chỉ thay đổi grid-row-start và grid-row-end (không set value cho grid-column-start/end) thì mặc định grid-column-start và grid-column-end sẽ là 1 và 2</li>
+        <li>Lưu ý 2: Khi chỉ sử dung grid-column-start/end thì sẽ giống như kiểu có phần tử vô hình khác chèn vào chiếm vị trí hiện tại của phần tử, buộc nó phải dịch chuyển đến vị trí mới cho đến khi nào đúng với value đã set cho grid-column-start/end</li>
+        <li>Lưu ý 3: Khi set value cho cả grid-row-start/end và grid-column-start/end thì lúc này phần tử sẽ thực sử được dịch chuyển đến vị trí mới và các phần tử khác sẽ chiếm các vị trí còn lại. Nói cách khác thì nó chính là lưu ý 1 nhưng lúc này grid-column-start/end đã được set value khác không phải 1 và 2</li>
+        <li>Lưu ý 4: Khi sử dụng grid-column hoặc grid-row có thể sử dụng kèm giá trị là span để xác định phần tử sẽ chiếm thêm bao nhiêu dòng hoặc cột. Nếu dố cột nhiều hơn số cột đã set trong grid-template-columns thì container sẽ tự đông sinh thêm cột để chứa (và tất nhiền column lines của cột này sẽ không được đếm theo chiều âm)</li>
+    </ul>
 </body>
 </html>
