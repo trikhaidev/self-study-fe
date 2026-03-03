@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="box1">Khối 1</div>        
+        <div id="box2">Khối 2</div>        
+        <div id="box3">Khối 3</div>        
+        <div id="box4">Khối 4</div>        
+        <div id="box5">Khối 5</div>        
+        <div id="box6">Khối 6</div>        
+    </div>
+    <ul>
+        <li>Lưu ý 1: khi chỉ thay đổi grid-row-start và grid-row-end (không set value cho grid-column-start/end) thì mặc định grid-column-start và grid-column-end sẽ là 1 và 2</li>
+        <li>Lưu ý 2: Khi chỉ sử dung grid-column-start/end thì sẽ giống như kiểu có phần tử vô hình khác chèn vào chiếm vị trí hiện tại của phần tử, buộc nó phải dịch chuyển đến vị trí mới cho đến khi nào đúng với value đã set cho grid-column-start/end</li>
+        <li>Lưu ý 3: Khi set value cho cả grid-row-start/end và grid-column-start/end thì lúc này phần tử sẽ thực sử được dịch chuyển đến vị trí mới và các phần tử khác sẽ chiếm các vị trí còn lại. Nói cách khác thì nó chính là lưu ý 1 nhưng lúc này grid-column-start/end đã được set value khác không phải 1 và 2</li>
+    </ul>
+</body>
+</html>
