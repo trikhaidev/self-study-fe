@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="box1">Khối 1</div>
+        <div id="box2">Khối 2</div>
+        <div id="box3">Khối 3</div>
+        <div id="box4">Khối 4</div>
+        <div id="box5">Khối 5</div>
+        <div id="box6">Khối 6</div>
+        <div id="box7">Khối 7</div>
+        <div id="box8">Khối 8</div>
+    </div>
+
+    <ul>
+        <li>khi chỉ set mỗi value cho grid-row-start và grid-row-end thì phần tử sẽ được đặt đúng với vị trí của row-start và row-end, còn về column của chúng thì nó sẽ được ưu tiên hơn xếp trước các phần tử k set grid-column-start và grid-column-end. Từ đó suy ra, nếu có nhiều hơn 1 phần các phần tử chỉ set grid-row-start và grid-row-end thì các phần tử đó sẽ được ưu tiên hơn các phần tử còn lại, và bản thân các phần tử đó sẽ được ưu tiên dựa theo thứ tự khai báo của chúng trong file html. Và tất nhiên chúng sẽ ưu tiên việc không bị đè lên nhau hơn</li>
+        <li>Nên tự trải nghiệm để hiểu nội dung phía trên. chú ý vào box4 và box7</li>
+        <li>Lưu ý: chỉ cần chưa set đủ 4 giá trị grid-row-start,grid-row-end, grid-column-start, grid-column-end (có thể viết tắt cả 4 bằng grid-area: row-start/column-start/row-end/column-end) thì các item sẽ tự ưu tiên để làm sao chúng không bị đè lên nhau</li>
+    </ul>
+</body>
+</html>
