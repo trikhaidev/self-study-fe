@@ -1,0 +1,39 @@
+.container{
+    background-color: rgb(39, 121, 121);
+    height: 700px;
+
+    display: grid;
+    grid-template-columns: 90px 75px 120px;
+    grid-template-rows: 115px 90px 120px;
+    grid-auto-rows: 100px;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1{
+    background-color: antiquewhite;
+}
+
+.box2{
+    background-color: lightblue;
+}
+
+.box3{
+    background-color: lightgreen;
+}
+
+.box4{
+    background-color: lightyellow;
+}
+
+.box5{
+    background-color: lightcoral;
+}
+
+.box6{
+    background-color: lightgray;
+}
