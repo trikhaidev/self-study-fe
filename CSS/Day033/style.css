@@ -1,0 +1,51 @@
+.container{
+    background-color: rgb(64, 148, 120);
+    height: 700px;
+
+    display: grid;
+
+    grid-template-areas: 
+    "xanhla xanhla blue blue blue"
+    "xanhla xanhla red red darkBlue"
+    "pink pink red red brown";
+    
+    gap: 15px;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+}
+
+.box1{
+    background-color: antiquewhite;
+    grid-area: brown;
+}
+
+.box2{
+    background-color: lightblue;
+    grid-area: pink;
+}
+
+.box3{
+    background-color: lightgreen;
+    grid-area: xanhla;
+}
+
+.box4{
+    background-color: lightyellow;
+    grid-area: red;
+}
+
+.box5{
+    background-color: lightcoral;
+    grid-area: darkBlue;
+}
+
+.box6{
+    background-color: lightgray;
+    grid-area: blue;
+}
