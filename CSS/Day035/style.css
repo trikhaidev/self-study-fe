@@ -11,6 +11,9 @@
 
     grid-auto-rows: 50px;
     grid-auto-columns: 50px;
+
+    align-items: flex-end;
+    justify-items: flex-start;
 }
 
 .container > div{
@@ -50,6 +53,9 @@
 
     grid-row: 1 / -1;
     grid-column: aqua;
+
+    align-self: flex-start;
+    justify-self: center;
 }
 #box8{
     background-color: rgb(0, 128, 255);
