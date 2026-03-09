@@ -1,21 +1,25 @@
 .container{
     background-color: rgb(97, 201, 201);
-    height: 700px;
+    height: 500px;
     display: grid;
 
-    grid-template-columns: repeat(2, auto) 120px;
+    grid-template-columns: repeat(2, 100px);
     grid-template-rows: 100px 125px;
 
     /* justify-content: stretch; */
     /* justify-content: flex-start; */
-    
+    justify-content: center;
+
     /* align-content: stretch; */
-    /* align-content: flex-start; */
+    align-content: flex-start;
     /* align-content: flex-end; */
     /* align-content: center; */
 
     align-items: center;
     justify-items: center;
+
+    /* grid-auto-flow:row; */
+    grid-auto-flow: column;
 }
 
 .container > div{
@@ -51,4 +55,11 @@
 
 ul{
     color: red;
+}
+
+h1{
+    text-align: center;
+    background-color: red;
+
+    color: yellow;
 }
