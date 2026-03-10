@@ -1,0 +1,8 @@
+.container{
+    background-color: rgb(24, 143, 143);
+    height: 700px;
+}
+
+.container > div{
+    
+}
