@@ -1,8 +1,43 @@
 .container{
     background-color: rgb(24, 143, 143);
+    width: 90%;
     height: 700px;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(200px,220px));
 }
 
 .container > div{
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box1{
+    background-color: rgb(226, 189, 65);
+}
+
+#box2{
+    background-color: rgb(134, 235, 19);
+}
+
+#box3{
+    background-color: rgb(204, 26, 26);
+}
+
+#box4{
+    background-color: rgb(60, 8, 80);
+}
+
+#box5{
+    background-color: rgb(202, 230, 48);
+}
+
+#box6{
+    background-color: rgb(194, 25, 228);
+}
+
+ul{
+    color: red;
 }
