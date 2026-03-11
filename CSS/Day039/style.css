@@ -1,0 +1,68 @@
+h1{
+    text-align: center;
+    color: red;
+    background-color: yellow;
+}
+
+.container {
+    background-color: rgb(27, 170, 170);
+    width: 80%;
+    height: 600px;
+
+    display: flex;
+
+    justify-content: flex-start;
+
+    /* align-items: flex-start; */
+    /* align-items: stretch; */
+    align-items: center;
+    /* align-items: flex-end; */
+
+    align-content: stretch;
+    /* align-content: center; */
+    /* align-content: space-around; */
+    /* align-content: space-evenly; */
+    /* align-content: flex-end; */
+
+    /* flex-wrap: wrap-reverse; */
+
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column; */
+    /* flex-direction: column-reverse; */
+
+    flex-flow: wrap row;
+}
+
+.container > div{
+    background-color: brown;
+    color: white;
+    border: 2px solid yellow;
+    width: 96px;
+    height: 96px;
+
+    /* flex-shrink: 0; */
+}
+
+#box3{
+    align-self: flex-end;
+    flex-grow: 5;
+    flex-shrink: 0;
+}
+
+#box6{
+    align-self: flex-start;
+    flex-grow: 1;
+    flex-shrink: 5;
+}
+
+#box5{
+    flex: 0 2 200px;
+}
+
+#box1{
+    order: 1;
+}
+
+ul{
+    color: red;
+}
