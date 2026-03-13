@@ -11,7 +11,10 @@ h1{
 
     display: flex;
 
-    justify-content: flex-start;
+    /* justify-content: stretch; */
+    justify-content: flex-end;
+    justify-items: flex-end;
+    /* justify-items: stretch; */
 
     /* align-items: flex-start; */
     /* align-items: stretch; */
@@ -37,21 +40,21 @@ h1{
     background-color: brown;
     color: white;
     border: 2px solid yellow;
-    width: 96px;
-    height: 96px;
+    /* width: 96px; */
+    /* height: 96px; */
 
     /* flex-shrink: 0; */
 }
 
 #box3{
     align-self: flex-end;
-    flex-grow: 5;
+    /* flex-grow: 5; */
     flex-shrink: 0;
 }
 
 #box6{
     align-self: flex-start;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     flex-shrink: 5;
 }
 
@@ -61,6 +64,10 @@ h1{
 
 #box1{
     order: 1;
+}
+
+#box9{
+    align-self: flex-start;
 }
 
 ul{
