@@ -77,4 +77,6 @@
 
 #box8{
     background-color: rgb(25,100, 25);
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
