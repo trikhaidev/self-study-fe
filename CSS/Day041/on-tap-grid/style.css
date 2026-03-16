@@ -16,7 +16,9 @@
     "scroll main main main"
     "scroll main main main";
 
-    gap: 15px;
+    /* gap: 15px; */
+    grid-row-gap: 20px;
+    grid-column-gap: 30px;
 
     justify-content: center;
     align-content: center;
