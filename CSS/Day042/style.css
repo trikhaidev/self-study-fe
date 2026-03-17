@@ -1,0 +1,23 @@
+h1{
+    text-align: center;
+    background-color: aquamarine;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    background-color: cadetblue;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+a:hover{
+    background-color: orange;
+    color: white;
+}
+
+ul{
+    color: red;
+}

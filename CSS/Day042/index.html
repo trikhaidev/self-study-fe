@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Luyện tập GRID CSS với game</h1>
+    <a href="https://game.tuhoc.cc/4/" target="_blank">link game</a>
+    <hr>
+    <ul>
+        <li>Bình thường grid-column-start sẽ có giá trị nhỏ hơn grid-column-end. Tuy nhiên chúng ta hoàn toàn có thể làm ngược lại, có thể để grid-column-end có giá trị nhỏ hơn grid-column-start. Ví dụ: grid-column-start: 4; grid-column-end: 2; => sẽ chiếm từ column line 2 đến column line 4</li>
+        <li>Ngoài việc sử dụng grid-column-start/grid-column-end/grid-column/grid-row với giá trị là số thứ tự column line thì ta hoàn toàn có thể sử dụng "span value"(với value là tổng số cột sẽ chiếm). Ví dụ: grid-column-start: 2; grid-column-end: span 3; => phần tử sẽ bắt đầu column line 2 và kết thúc ở column line 5, điều này hoàn toàn tương đương với việc chúng ta sử dụng grid-column-end: 5</li>
+        <li>đơn vị fr sẽ phân chia không gian còn lại của container. Ví dụ width của container là 500px, có 3 cột với width là 50px => fr sẽ phân chia phần width còn lại, tức là tổng các fr sẽ bằng 350px</li>
+    </ul>
+</body>
+</html>
