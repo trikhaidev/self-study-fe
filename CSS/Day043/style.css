@@ -1,0 +1,18 @@
+h1{
+    text-align: center;
+    background-color: red;
+    color: yellow;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: rgb(134, 10, 235);
+    color: white;
+    border-radius: 8px;
+}
+
+a:hover{
+    background-color: rgba(10, 235, 85, 0.8);
+}
