@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript ES6 - Modules Tìm hiểu Named Export, Default Export - Giải thích chi tiết</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <h1>Hello world!</h1>
-    <script type="module" src="./main.js"></script>
+    <ul>
+        <li>Không dùng được lambda expression cho export default</li>
+        <li>không thể import export default theo kiểu {}</li>
+        <li>khi import *, chúng ta hoàn toàn có thể sử dụng export default, tuy nhiên tên của export default sẽ là default</li>
+        <li>import defaultExport,{} from "./service.js"; => defaultExport bắt buộc phải viết trước </li>
+        <li>Khi một biến được import từ một file khác thì nó sẽ không thể bị thay đổi giá trị</li>
+        <li>Khi nào quá trình import hoàn tất thì các câu lệnh của file đó mới được thực thi. Trong quá trình import thì các câu lệnh trong file export sẽ được thực thi trước (định nghĩa, khai báo các method, biến, class,...). Tuy nhiên, không vì thế mà file export sẽ chạy trước file import, file import vẫn sẽ chạy trước vì nếu k chạy thì sao câu lệnh import đc thực thi. <b>Lưu ý, chỉ khi quá trình import hoàn tất thì các câu lệnh của file import mới được thực thi</b></li>
+    </ul>
 </body>
 </html>
+
+<script type="module" src="./main.js"></script>
