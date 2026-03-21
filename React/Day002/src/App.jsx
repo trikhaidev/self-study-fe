@@ -27,6 +27,10 @@ function App() {
         >
           Count is {count}
         </button>
+        <ul id='final'>
+          <li>Hoàn toàn có thể khởi tạo dự án React với ngôn ngữ lập trình TS. Khi build ứng dụng thì code bằng TS, khi deploy ứng dụng thì node.js sẽ dịch TS thành JS để trình duyệt có thể chạy</li>
+          <li>Tuy nhiên tôi sẽ học React với ngôn ngữ lập trình JS trước vì tôi thấy TS khá giống C#. Sau này khi chuyển từ JS sang TS sẽ dễ dàng hơn</li>
+        </ul>
       </section>
 
       <div className="ticks"></div>
