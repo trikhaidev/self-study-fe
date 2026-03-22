@@ -1,0 +1,14 @@
+#body{
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    border-radius: 25px;
+    padding: 40px 20px;
+    background-color: rgb(203, 233, 233);
+    text-align: center;
+    flex-basis: 500px;
+}
