@@ -3,7 +3,7 @@ import Header from './components/header/header-component'
 import Content from './components/content/content-component';
 
 function App() {
-  var date = new Date();
+  const date = new Date();
   return (
     <>
       <div id='container'>
