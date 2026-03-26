@@ -21,13 +21,18 @@ function Text(model:TextModel){
         <>
             <p style={{
                 color:model.color ?? 'black',
-                textAlign : model.textAlign ?? "left"
+                textAlign : model.textAlign ?? 'left'
             }}>{model.text}</p>
         </>
     );
 }
 
 export default function Content(){
+    const obj:TextModel = {
+        text : "Hello bro! ok bro",
+        color : "darkgreen",
+        textAlign : "center"
+    };
     return (
         <>
             <div id='content'>
@@ -35,7 +40,7 @@ export default function Content(){
                 <hr />
                 <Text text= "Hello bro! ok bro" color="blue" textAlign="right"></Text>
                 <hr />
-                <Text text={'Are You Ok?'} color={'Yellow'} textAlign={'end'}/>
+                <Text {...obj}/>
             </div>
         </>
     );
