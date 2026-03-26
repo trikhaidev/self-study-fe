@@ -19,7 +19,10 @@ function Img(){
 function Text(model:TextModel){
     return (
         <>
-            <p style={{color:model.color ?? 'black'}}>{model.text}</p>
+            <p style={{
+                color:model.color ?? 'black',
+                textAlign : model.textAlign ?? "left"
+            }}>{model.text}</p>
         </>
     );
 }
@@ -30,9 +33,9 @@ export default function Content(){
             <div id='content'>
                 <Img></Img>
                 <hr />
-                <Text text= "Hello bro! ok bro" color="blue"></Text>
+                <Text text= "Hello bro! ok bro" color="blue" textAlign="right"></Text>
                 <hr />
-                <Text text={'Are You Ok?'} color={'Yellow'}/>
+                <Text text={'Are You Ok?'} color={'Yellow'} textAlign={'end'}/>
             </div>
         </>
     );
@@ -41,4 +44,5 @@ export default function Content(){
 class TextModel{
     public text:string|undefined|null;
     public color:string|undefined|null;
+    public textAlign:string|null|undefined;
 }
