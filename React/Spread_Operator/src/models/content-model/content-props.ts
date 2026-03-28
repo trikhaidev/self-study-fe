@@ -1,6 +1,10 @@
+import type { ReactNode } from "react";
+import type React from "react";
+
 export default interface ContentProps {
     text:string|number|null|undefined,
-    style:React.CSSProperties
+    style:React.CSSProperties,
+    children?:ReactNode
 }
 
 export const Contents: ContentProps[] = [
@@ -18,7 +22,7 @@ export const Contents: ContentProps[] = [
         style: {
             color: "green",
             fontSize: "16px",
-        },
+        }
     },
     {
         text: 'Okay bro!',
@@ -35,7 +39,7 @@ export const Contents: ContentProps[] = [
         },
     },
     {
-        text: "Nội dung có nền",
+        text: "Ok something",
         style: {
             backgroundColor: "#4d2a2a",
             padding: "8px 12px",
