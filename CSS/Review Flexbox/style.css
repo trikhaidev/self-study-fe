@@ -1,0 +1,46 @@
+#container{
+    background-color: aqua;
+    width: 60%;
+    height: 600px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    align-content: flex-start;
+    /* align-content: stretch; */
+    align-items: flex-end;
+}
+
+#container > div{
+    background-color: brown;
+    border: 2px solid yellow;
+    width: 96px;
+}
+
+#box1{
+    height: 96px;
+    flex-basis: 10px;
+    /* width: 10px; */
+}
+
+#box2{
+    height: 96px;
+}
+
+#box3{
+    height: 250px;
+}
+
+#box4{
+    height: 96px;
+}
+
+#box5{
+    height: 96px;
+    align-self: flex-start;
+}
+
+#box6{
+    height: 96px;
+    align-self: center;
+}
