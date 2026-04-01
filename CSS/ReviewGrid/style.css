@@ -5,7 +5,7 @@
 
     display: grid;
     /* gap: 20px; */
-    grid-template-columns: 125px repeat(3, minmax(100px, 135px));
+    grid-template-columns: 125px repeat(auto-fit, minmax(100px, 135px));
     grid-template-rows: 125px repeat(3, minmax(100px, 135px));
 
     grid-template-areas: "c1 c2 c3 c4";
