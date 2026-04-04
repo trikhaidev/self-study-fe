@@ -1,4 +1,4 @@
-import type SomeThing from "../../models/someThing";
+import type SomeThing from "../models/someThing";
 
 export type Props = {data: SomeThing, children: React.ReactNode};
 export default function SomeThing({data,children}:Props){
