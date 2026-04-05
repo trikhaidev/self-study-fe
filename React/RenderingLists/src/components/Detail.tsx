@@ -9,7 +9,26 @@ export interface DetailItem{
 }
 
 export default function Detail(p:DetailProps){
-    const content:React.ReactNode = p.items.map(i => {
+    // const content:React.ReactNode = p.items.map(i => {
+    //     if(i.done){
+    //         return <li style={{color:"green"}} key={`${i.content}_${i.done}`}>
+    //             <del>{i.content} - Done</del>
+    //         </li>;
+    //     }
+    //     return (
+    //         <li style={{color: 'red'}} key={`${i.content}_${i.done}`}>
+    //             {i.content} - Not Done
+    //         </li>
+    //     );
+    // });
+    return (
+        <ul>
+            {renderItems(p.items)}
+        </ul>
+    );
+}
+function renderItems(items: DetailItem[]){
+    return items.map(i => {
         if(i.done){
             return <li style={{color:"green"}} key={`${i.content}_${i.done}`}>
                 <del>{i.content} - Done</del>
@@ -21,9 +40,4 @@ export default function Detail(p:DetailProps){
             </li>
         );
     });
-    return (
-        <ul>
-            {content}
-        </ul>
-    );
 }
