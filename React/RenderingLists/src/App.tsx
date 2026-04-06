@@ -20,7 +20,8 @@ function App() {
         content : 'Learn .NET',
         done :false
       }
-    ]
+    ],
+    type : true
   };
   return (
     <div id="app">
