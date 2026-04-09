@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 export interface ToDoListItem {
     id: number;
     title: string;
@@ -18,7 +20,7 @@ export default function ListItem({ type, items, isOrderList }: ToDoListItemProps
     else {
         content = <>
                 {renderListItem(items.filter(x => x.isDone),isOrderList)}
-                <hr />
+                <hr/>
                 {renderListItem(items.filter(x => !x.isDone),isOrderList)}
             </>
     }
@@ -35,16 +37,10 @@ function renderListItem(items: ToDoListItem[], isOrderList:boolean) {
             <span className={x.isDone ? 'flex items-center gap-2' : ''}>
                 {x.isDone ? <del className="text-gray-400">{x.title}</del> : x.title}
             </span>
-            <button
-                className={x.isDone ? `px-5 py-2 rounded-lg bg-blue-600 text-white font-medium
-                        hover:bg-blue-700 active:bg-blue-800
-                        focus:outline-none focus:ring-2 focus:ring-blue-400`
-                    : `px-5 py-2 rounded-lg bg-red-600 text-white font-medium
-                    hover:bg-red-700 active:bg-red-800
-                    focus:outline-none focus:ring-2 focus:ring-red-400`}
-                    onClick={() => {alert('mày click gì đấy ?')}}>
-                {x.isDone ? 'Hoàn thành' : 'Chưa hoàn thành'}
-            </button>
+            <Button isDone = {x.isDone} onClick={ () => {
+                // e.stopPropagation();
+                alert(`Bây giờ là ${new Date().toLocaleTimeString()}, bạn đã ${x.title} chưa ?`);
+            }}>Click me</Button>
         </li>)
         }
     </TypeList>);
