@@ -37,8 +37,8 @@ function renderListItem(items: ToDoListItem[], isOrderList:boolean) {
             <span className={x.isDone ? 'flex items-center gap-2' : ''}>
                 {x.isDone ? <del className="text-gray-400">{x.title}</del> : x.title}
             </span>
-            <Button isDone = {x.isDone} onClick={ () => {
-                // e.stopPropagation();
+            <Button isDone = {x.isDone} onClick={ (e:React.MouseEvent<HTMLButtonElement>) => {
+                e.stopPropagation();
                 alert(`Bây giờ là ${new Date().toLocaleTimeString()}, bạn đã ${x.title} chưa ?`);
             }}>Click me</Button>
         </li>)

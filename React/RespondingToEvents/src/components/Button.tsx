@@ -1,7 +1,7 @@
 export type ButtonProps = {
     isDone: boolean;
     children: React.ReactNode;
-    onClick:() => void;
+    onClick:(e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 export default function Button(p: ButtonProps) {
     return (
@@ -12,10 +12,7 @@ export default function Button(p: ButtonProps) {
                 : `px-5 py-2 rounded-lg bg-red-600 text-white font-medium
                     hover:bg-red-700 active:bg-red-800
                     focus:outline-none focus:ring-2 focus:ring-red-400`}
-            onClick={(e) => {
-                // e.stopPropagation();
-                p.onClick();
-            }}>
+            onClick={p.onClick}>
             {p.children}
         </button>
     );
