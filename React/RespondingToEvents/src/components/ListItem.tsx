@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 import Button from "./Button";
 
 export interface ToDoListItem {
@@ -13,7 +14,8 @@ type ToDoListItemProps = {
 }
 
 export default function ListItem({ type, items, isOrderList }: ToDoListItemProps) {
-    let content: React.ReactNode = null;
+    let content: JSX.Element|null = null; // nên dùng cách này nếu muốn ràng buộc chỉ nhận JSX
+    //let content: React.ReactNode = null; // Cách 2
     if (type) {
         content = renderListItem(items,isOrderList);
     }
@@ -24,10 +26,11 @@ export default function ListItem({ type, items, isOrderList }: ToDoListItemProps
                 {renderListItem(items.filter(x => !x.isDone),isOrderList)}
             </>
     }
-
-    return (<>
-        {content}
-    </>);
+    return (
+        <>
+            {content}
+        </>
+    );
 }
 
 function renderListItem(items: ToDoListItem[], isOrderList:boolean) {
