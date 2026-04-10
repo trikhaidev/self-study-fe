@@ -1,4 +1,4 @@
-import type { JSX } from "react";
+import { useState, type JSX } from "react";
 import Button from "./Button";
 
 export interface ToDoListItem {
@@ -14,17 +14,17 @@ type ToDoListItemProps = {
 }
 
 export default function ListItem({ type, items, isOrderList }: ToDoListItemProps) {
-    let content: JSX.Element|null = null; // nên dùng cách này nếu muốn ràng buộc chỉ nhận JSX
+    let content: JSX.Element | null = null; // nên dùng cách này nếu muốn ràng buộc chỉ nhận JSX
     //let content: React.ReactNode = null; // Cách 2
     if (type) {
-        content = renderListItem(items,isOrderList);
+        content = renderListItem(items, isOrderList);
     }
     else {
         content = <>
-                {renderListItem(items.filter(x => x.isDone),isOrderList)}
-                <hr/>
-                {renderListItem(items.filter(x => !x.isDone),isOrderList)}
-            </>
+            {renderListItem(items.filter(x => x.isDone), isOrderList)}
+            <hr />
+            {renderListItem(items.filter(x => !x.isDone), isOrderList)}
+        </>
     }
     return (
         <>
@@ -33,18 +33,23 @@ export default function ListItem({ type, items, isOrderList }: ToDoListItemProps
     );
 }
 
-function renderListItem(items: ToDoListItem[], isOrderList:boolean) {
+function renderListItem(items: ToDoListItem[], isOrderList: boolean) {
     const TypeList = isOrderList ? "ol" : "ul";
     return (<TypeList className="space-y-3">
-        {items.map(x => <li className="flex items-center justify-between text-gray-600" key={x.id}>
-            <span className={x.isDone ? 'flex items-center gap-2' : ''}>
-                {x.isDone ? <del className="text-gray-400">{x.title}</del> : x.title}
-            </span>
-            <Button isDone = {x.isDone} onClick={ (e:React.MouseEvent<HTMLButtonElement>) => {
-                e.stopPropagation();
-                alert(`Bây giờ là ${new Date().toLocaleTimeString()}, bạn đã ${x.title} chưa ?`);
-            }}>Click me</Button>
-        </li>)
+        {items.map(x => {
+            const [item,setItem] = useState(x);
+            return <li className="flex items-center justify-between text-gray-600" key={x.id}>
+                <span className={item.isDone ? 'flex items-center gap-2' : ''}>
+                    {item.isDone ? <del className="text-gray-400">{item.title}</del> : item.title}
+                </span>
+                <Button isDone={item.isDone} onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                    e.stopPropagation();
+                    alert(`Bây giờ là ${new Date().toLocaleTimeString()}, bạn đã ${item.title} chưa ?`);
+                    item.isDone = !item.isDone;
+                    setItem(item); 
+                }}>Click me</Button>
+            </li>
+        })
         }
     </TypeList>);
 }

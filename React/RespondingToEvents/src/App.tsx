@@ -26,11 +26,9 @@ function App() {
     }
 ];
   return (
-    <div id='app' className='min-h-screen bg-gray-100 flex items-center justify-center' onClickCapture={() =>{
-      alert("App default!");
-    }}>
+    <div id='app' className='min-h-screen bg-gray-100 flex items-center justify-center'>
       <ToDoList items={items} subject='Hello world' type ={true} isOrderList = {false}
-      onClickCapture={() => {alert(`ToDoList onClick`)}}
+      onClick={() => {alert(`ToDoList onClick`)}}
       ></ToDoList>
     </div>
   )
