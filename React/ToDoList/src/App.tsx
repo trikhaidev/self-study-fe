@@ -6,10 +6,20 @@ import ToDoList from "./components/ToDoList";
 function App() {
   const [listItems, setListItems] = useState<ListItem[]>([]);
   const [newItem, setNewItem] = useState<string>("");
+  const [typeShow, setTypeShow] = useState<number>(0);
   const completedCount = listItems.filter((item) => item.isDone).length;
   const pendingCount = listItems.length - completedCount;
   const progress =
     listItems.length === 0 ? 0 : Math.round((completedCount / listItems.length) * 100);
+
+  let itemsToShow = listItems;
+  if(typeShow === 1){
+    itemsToShow = listItems.filter(x => x.isDone);
+  }
+  else if(typeShow === 2){
+    itemsToShow = listItems.filter(x => !x.isDone)
+  }
+  
   function handleAddItem() {
     const trimmedItem = newItem.trim();
 
@@ -117,9 +127,30 @@ function App() {
                 Add task
               </button>
             </div>
-
+            <div className="mt-5 flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                  Filter tasks
+                </p>
+                <p className="mt-1 text-sm text-slate-300">
+                  Choose which items should appear in the list.
+                </p>
+              </div>
+              <select
+                value={typeShow}
+                onChange={(e) => {
+                  const data = e.currentTarget.value;
+                  setTypeShow(parseInt(data));
+                }}
+                className="min-w-40 rounded-xl border border-white/10 bg-slate-900 px-4 py-2.5 text-sm font-medium text-white outline-none transition focus:border-amber-300 focus:ring-4 focus:ring-amber-300/20"
+              >
+                <option value={0}>All</option>
+                <option value={1}>Completed</option>
+                <option value={2}>In Progress</option>
+              </select>
+            </div>
             <div className="mt-6">
-              <ToDoList items={listItems} onToggleItem={handleToggleItem} removeItem={removeItem} />
+              <ToDoList items={itemsToShow} onToggleItem={handleToggleItem} removeItem={removeItem} />
             </div>
           </section>
         </div>
