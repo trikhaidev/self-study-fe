@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { KeyboardEvent } from "react";
 import type { ListItem } from "./components/ToDoList";
 import ToDoList from "./components/ToDoList";
+import Clock from "./components/Clock";
 
 function App() {
   const [listItems, setListItems] = useState<ListItem[]>([]);
@@ -67,8 +68,8 @@ function App() {
             <div className="inline-flex items-center gap-2 rounded-full bg-amber-100 px-3 py-1 text-sm font-medium text-amber-900">
               <span className="h-2 w-2 rounded-full bg-amber-500" />
               Focus workspace
+              <Clock></Clock>
             </div>
-
             <h1 className="mt-5 max-w-md text-4xl font-black tracking-tight text-slate-900 sm:text-5xl">
               Organize your day with a cleaner todo flow.
             </h1>
