@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import SendMessage from './components/SendMessage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,6 +11,7 @@ function App() {
     // setCount(prev => prev + 1);
     // setCount(prev => prev + 1);
     // setCount(prev => prev + 1);
+    // cách trên có thể giúp ta truy cập giá trị mới nhất của state ngay trước khi lần render tiếp theo xảy ra.
 
     setCount(count + 1);
     setCount(count + 1);
@@ -44,6 +46,8 @@ function App() {
         >
           Count is {count}
         </button>
+        <hr />
+        <SendMessage></SendMessage>
       </section>
 
       <div className="ticks"></div>
