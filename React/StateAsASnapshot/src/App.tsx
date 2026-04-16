@@ -11,15 +11,18 @@ function App() {
     // setCount(prev => prev + 1);
     // setCount(prev => prev + 1);
 
-    // setCount(count + 1);
-    // setCount(count + 1);
-    // setCount(count + 1);
+    setCount(count + 1);
+    setCount(count + 1);
+    setCount(count + 1);
 
     // setCount(1);
     // setCount(2);
     // setCount(3);
 
     alert(count)
+    setTimeout(() => {
+      alert("Sau 5 giây: " + count)
+    },5000);
   }
   return (
     <>
