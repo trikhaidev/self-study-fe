@@ -80,16 +80,24 @@ export default function ToDoList({ items, onToggleItem, onRemoveItem, onEditingI
                                     />
                                 </div>
                                 :
-                                <p
-                                    className={`text-base font-medium transition ${item.isDone ? "text-slate-300 line-through" : "text-white"
-                                        }`}
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        onEditingItem(item.id);
-                                    }}
-                                >
-                                    {item.title}
-                                </p>
+                                <div className="group/title relative inline-block">
+                                    <p
+                                        className={`inline-block cursor-pointer text-base font-medium transition hover:underline ${item.isDone ? "text-slate-300 line-through" : "text-white"
+                                            }`}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            onEditingItem(item.id);
+                                        }}
+                                    >
+                                        {item.title}
+                                    </p>
+                                    <span className="pointer-events-none absolute -top-14 left-1/2 z-10 flex -translate-x-1/2 translate-y-1 flex-col items-center opacity-0 transition duration-200 group-hover/title:translate-y-0 group-hover/title:opacity-100">
+                                        <span className="whitespace-nowrap rounded-xl border border-amber-200/70 bg-amber-50 px-3 py-2 text-xs font-semibold text-amber-950 shadow-[0_14px_30px_-14px_rgba(251,191,36,0.8)]">
+                                            Click to edit title
+                                        </span>
+                                        <span className="h-2.5 w-2.5 -translate-y-1 rotate-45 border-r border-b border-amber-200/70 bg-amber-50" />
+                                    </span>
+                                </div>
                             }
                             <p className="mt-1 text-sm text-slate-400">
                                 {item.isDone ? "Completed" : "Ready to focus"}

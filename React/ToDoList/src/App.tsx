@@ -25,7 +25,7 @@ function App() {
     const trimmedItem = newItem.trim();
 
     if (!trimmedItem) {
-      alert("Vui lòng nhập nội dung công việc cần làm");
+      alert("Please enter a task before adding it.");
       return;
     }
     const maxId = listItems.length > 0 ? Math.max(...listItems.map((item) => item.id)) : 0;
@@ -69,13 +69,13 @@ function App() {
   }
 
   function handleAcceptUpdateTitle(itemId:number){
-    return setListItems(curr => {
+    setListItems(curr => {
       return curr.map(x => {
         if(x.id !== itemId){
           return x;
         }
         if(!x.title || x.title.trim() === ''){
-          alert('Tiêu đề không được để trống');
+          alert("The title can't be empty. Please enter a new title.");
           return x;
         }
         return {... x, isEditing: false};
@@ -195,3 +195,4 @@ function App() {
 }
 
 export default App;
+
