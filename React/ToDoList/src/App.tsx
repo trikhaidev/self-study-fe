@@ -36,6 +36,7 @@ function App() {
         id: maxId + 1,
         title: trimmedItem,
         isDone: false,
+        isEditing: false,
       },
     ]);
     setNewItem("");
@@ -49,9 +50,36 @@ function App() {
     );
   }
 
-  function removeItem(itemId: number) {
+  function handleRemoveItem(itemId: number) {
     setListItems(current => {
       return current.filter(x => x.id !== itemId);
+    });
+  }
+
+  function handleEditingItem(itemId:number){
+    setListItems(curr => {
+      return curr.map(x => x.id === itemId ? {...x, isEditing: !x.isEditing} : x);
+    });
+  }
+
+  function handleUpdateTitle(itemId:number, newTitle:string){
+    setListItems(curr => {
+      return curr.map(x => x.id == itemId ? {...x,title :newTitle} : x);
+    });
+  }
+
+  function handleAcceptUpdateTitle(itemId:number){
+    return setListItems(curr => {
+      return curr.map(x => {
+        if(x.id !== itemId){
+          return x;
+        }
+        if(!x.title || x.title.trim() === ''){
+          alert('Tiêu đề không được để trống');
+          return x;
+        }
+        return {... x, isEditing: false};
+      });
     });
   }
 
@@ -151,7 +179,13 @@ function App() {
               </select>
             </div>
             <div className="mt-6">
-              <ToDoList items={itemsToShow} onToggleItem={handleToggleItem} removeItem={removeItem} />
+              <ToDoList items={itemsToShow} 
+                onToggleItem={handleToggleItem} 
+                onRemoveItem={handleRemoveItem} 
+                onEditingItem={handleEditingItem} 
+                onUpdateTitle={handleUpdateTitle} 
+                onAcceptUpdateTile={handleAcceptUpdateTitle}
+              />
             </div>
           </section>
         </div>

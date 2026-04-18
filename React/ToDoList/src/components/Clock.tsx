@@ -5,7 +5,6 @@ export default function Clock(){
     setInterval(() =>{
         setTimeString(new Date().toLocaleTimeString());
     }, 1000);
-    console.log(timeString);
     return (
         <p>{timeString}</p>
     );
