@@ -9,7 +9,7 @@ function App() {
   const [count, setCount] = useState(0);
   alert("Sau useState");
   const handleClick = () => {
-    // setCount(count + 1);
+    setCount(count + 1);
     setCount(c => {
       alert("Update function 1: " + c);
       return c + 1;
@@ -18,7 +18,7 @@ function App() {
       alert("Update function 2: " + c);
       return c + 1;
     });
-    // setCount(42);
+    setCount(42);
     alert("Current count: "+count);
 
     /**
