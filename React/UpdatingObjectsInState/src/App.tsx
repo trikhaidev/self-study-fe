@@ -59,6 +59,8 @@ function App() {
     //   [propertyName] : propertyValue
     // }));
 
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     // Cách dướichỉ hoạt động đúng khi envent handle chạy lần đầu. Nguyên nhân là do ở lần đầu chạy event handle thì state sẽ được setState lần đầu tiên mà vì là lần đầu tiên nên 
     //update function sẽ được chạy ngay lập tức khi gọi setState. Còn từ lần thứ 2 trở đi thì update function sẽ được đưa vào hàng đợi, ở lần re-render tiếp theo React mới duyệt
     //qua hàng đợi để cập nhật state mới. Chính vì update function chỉ được chạy sau khi re-render và gọi useState nên đối tưởng event đã bị hủy trước đó, dẫn đến không thể truy 
