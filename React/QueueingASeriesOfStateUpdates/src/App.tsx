@@ -9,7 +9,7 @@ function App() {
   const [count, setCount] = useState(0);
   alert("Sau useState");
   const handleClick = () => {
-    setCount(count + 1);
+    //setCount(count + 1);
     setCount(c => {
       alert("Update function 1: " + c);
       return c + 1;
@@ -18,13 +18,16 @@ function App() {
       alert("Update function 2: " + c);
       return c + 1;
     });
-    setCount(42);
+    if(count !== 42){
+      setCount(count + 1);
+      setCount(c => c + 1);
+    }
     alert("Current count: "+count);
 
     /**
-     *  Ngay khi gọi setState (trường hợp này là setCount) lần đầu trong trình xử lý sự kiện thì React sẽ ngay lập tức cập nhật state (hoặc run update function)
-     * và trigger re-render. Tuy nhiên, nếu trong trình xử lý sự kiện vẫn còn tiếp tục cập nhật lại state sau đó thì các giá trị hoặc các update function này 
-     * sẽ được đưa vào hàng đợi, và khi component re-render thì ở ngay cậu lệnh useState React sẽ duyệt qua hàng đợi để cập nhật lại state.
+     *  Khi lần đầu tiền gọi setState (trong trường hợp này là setCount) thì update function sẽ được chạy ngay lập tức hay nếu là newState thì sẽ được cập nhật ngay lập tức.
+     * Tuy nhiên, sau đó nếu có gọi setState tiếp thì sẽ chỉ đơn giản là trigger re-render, update function mới hay newState mới sẽ được đưa vào hàng đợi và ở lần gọi useState
+     * tiếp theo thì React sẽ duyệt qua hàng đợi này để tính toán ra state mới nhất để trả về cho component.
      * 
      * Lưu ý: Event handler phải thực thi xong thì Component mới được re-render.
      */

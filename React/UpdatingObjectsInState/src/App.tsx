@@ -10,10 +10,10 @@ function App() {
   });
 
   const [position, setPosition] = useImmer({
-    x:0,
-    y:0,
+    x: 0,
+    y: 0,
     countObj: {
-      countNumber:0
+      countNumber: 0
     }
   });
 
@@ -38,16 +38,50 @@ function App() {
 
   // Cách 2
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setLoginForm({
-      ...loginForm,
-      [e.currentTarget.name] : e.currentTarget.value
+    // setLoginForm({
+    //   ...loginForm,
+    //   [e.currentTarget.name] : e.currentTarget.value
+    // });
+
+    // setLoginForm(obj => {
+    //   const newObj = {
+    //     username:"default",
+    //     password:"default",
+    //     showPassword:true
+    //   };
+    //   return newObj;
+    // });
+
+    // const propertyName = e.currentTarget.name;
+    // const propertyValue = e.currentTarget.value;
+    // setLoginForm(obj => ({
+    //   ...obj,
+    //   [propertyName] : propertyValue
+    // }));
+
+    // lần đầu handle chạy thì update function chạy ngay khi gọi setState, còn lần sau thì khi nào handle xử lý xong thì update function mới chạy
+    setLoginForm(obj => {
+      alert("set loginform");
+      const newObj = {
+        ...obj,
+        [e.currentTarget.name]: e.currentTarget.value
+      };
+      return newObj;
     });
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    alert("input change");
+    // setPosition(obj => {
+    //   obj.countObj.countNumber += 1;
+    // });
   }
 
   // Cách 3: Dùng useImmer
   // Update function của cách này nhận tham số đầu vào là state hiện tại. Nó k cần return về bất cứ thứ gì, chỉ đơn giản là thao tác với state (tham số) được truyền vào. Immer
   //sẽ tự động biết được thuộc tính nào đã thay đổi.
-  function handleMouseMove(e:React.MouseEvent<HTMLDivElement>){
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    e.preventDefault();
     setPosition(p => {
       p.x = e.clientX;
       p.y = e.clientY;
@@ -57,24 +91,24 @@ function App() {
   return (
     <>
       <div>
-        <input name="username" type="text" value={loginForm.username} onChange={handleInputChange}/>
+        <input name="username" type="text" value={loginForm.username} onChange={handleInputChange} />
       </div>
       <div>
-        <input name="password" type={loginForm.showPassword ? 'text' : 'password'} value={loginForm.password} onChange={handleInputChange}/>
+        <input name="password" type={loginForm.showPassword ? 'text' : 'password'} value={loginForm.password} onChange={handleInputChange} />
       </div>
       <div>
-        <input type="checkbox" checked={loginForm.showPassword} onChange={() => setLoginForm({...loginForm,showPassword: !loginForm.showPassword})}/>
+        <input type="checkbox" checked={loginForm.showPassword} onChange={() => setLoginForm({ ...loginForm, showPassword: !loginForm.showPassword })} />
       </div>
       <hr />
       <div style={{
-          width: 250,
-          height: 250,
-          border: "1px solid black",
-          backgroundColor: `rgb(100,${position.x},${position.y})`,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center"
-        }}
+        width: 250,
+        height: 250,
+        border: "1px solid black",
+        backgroundColor: `rgb(100,${position.x},${position.y})`,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}
         onMouseMove={handleMouseMove}
       >
         {position.countObj.countNumber}
