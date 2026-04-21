@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useImmer } from "use-immer";
+import Form from "./components/Form";
 
 // lệnh cái đặt Immer: npm install use-immer
 function App() {
@@ -52,12 +53,12 @@ function App() {
     //   return newObj;
     // });
 
-    // const propertyName = e.currentTarget.name;
-    // const propertyValue = e.currentTarget.value;
-    // setLoginForm(obj => ({
-    //   ...obj,
-    //   [propertyName] : propertyValue
-    // }));
+    const propertyName = e.currentTarget.name;
+    const propertyValue = e.currentTarget.value;
+    setLoginForm(obj => ({
+      ...obj,
+      [propertyName] : propertyValue
+    }));
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -65,14 +66,14 @@ function App() {
     //update function sẽ được chạy ngay lập tức khi gọi setState. Còn từ lần thứ 2 trở đi thì update function sẽ được đưa vào hàng đợi, ở lần re-render tiếp theo React mới duyệt
     //qua hàng đợi để cập nhật state mới. Chính vì update function chỉ được chạy sau khi re-render và gọi useState nên đối tưởng event đã bị hủy trước đó, dẫn đến không thể truy 
     // cập vùng nhớ
-    setLoginForm(obj => {
-      alert("set loginform");
-      const newObj = {
-        ...obj,
-        [e.currentTarget.name]: e.currentTarget.value
-      };
-      return newObj;
-    });
+    // setLoginForm(obj => {
+    //   alert("set loginform");
+    //   const newObj = {
+    //     ...obj,
+    //     [e.currentTarget.name]: e.currentTarget.value
+    //   };
+    //   return newObj;
+    // });
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////
@@ -118,6 +119,8 @@ function App() {
       >
         {position.countObj.countNumber}
       </div>
+      <hr />
+      <Form />
     </>
   )
 }
