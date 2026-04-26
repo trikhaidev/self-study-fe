@@ -2,12 +2,10 @@ import { useState } from "react";
 import "./Product.css"
 import loadingImage from "../assets/Loading_icon.gif";
 import type Product from "../models/Product";
+import Status from "../models/Status";
 
-const baseUrl = 'https://dummyjson.com/products';
-class Status {
-    static loading = 'loading';
-    static success = 'success';
-}
+export const baseUrl = 'https://dummyjson.com/products';
+
 type ProductsProps = {
     onShowProduct: (p:Product) => void;
 }
