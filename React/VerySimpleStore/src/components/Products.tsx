@@ -9,7 +9,7 @@ type ProductsProps = {
     onShowProduct: (p: Product) => void;
 }
 export default function Products({ onShowProduct }: ProductsProps) {
-    const [status, setStatus] = useState(Status.success);
+    const [status, setStatus] = useState(Status.firstLoading);
     const [search, setSearch] = useState('');
     const [products, setProducts] = useState<Product[]>([]);
     const [error, setError] = useState<string | null>(null);
@@ -31,6 +31,9 @@ export default function Products({ onShowProduct }: ProductsProps) {
             setError(`Error catch: ${e}`);
         }
         setStatus(Status.success);
+    }
+    if(status === Status.firstLoading) {
+        handleSearch();
     }
     return (
         <>
