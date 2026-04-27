@@ -79,7 +79,7 @@ export default function ShowProduct({ productLoaded, reLoad, onClose }: ShowProd
     }
     else{
         if(status === Status.loading){
-            content = <img src= {loadingGif} alt="Loading" className="mx-auto h-14 w-14 opacity-80" ></img>
+            content = <img src= {loadingGif} alt="Loading" className="mx-auto w-96 opacity-90" ></img>
         }
         else if(error){
             content = <p className="rounded-xl border border-rose-200 bg-rose-50 p-3 text-rose-700">Error: {error} - <button className="ml-1 rounded-md bg-rose-600 px-3 py-1 text-sm font-medium text-white transition hover:bg-rose-700" onClick={e => {

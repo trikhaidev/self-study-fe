@@ -61,7 +61,7 @@ export default function Products({ onShowProduct }: ProductsProps) {
                 {
                     status === Status.loading &&
                     <div className="flex justify-center rounded-2xl border border-slate-200 bg-white py-10">
-                        <img src={loadingImage} alt="Loading" className="h-14 w-14 opacity-80" />
+                        <img src={loadingImage} alt="Loading" className="w-96 opacity-90" />
                     </div>
                 }
                 {
