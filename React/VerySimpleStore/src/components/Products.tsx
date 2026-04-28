@@ -13,6 +13,23 @@ export default function Products({ onShowProduct }: ProductsProps) {
     const [search, setSearch] = useState('');
     const [products, setProducts] = useState<Product[]>([]);
     const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        fetch(`${baseUrl}/search?q=${search}`)
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            setProducts(data.products);
+        })
+        .catch(e => {
+            setError("Error: " + e);
+        })
+        .finally(() => {
+            setStatus(Status.success);
+        });
+    },[]);
+
     async function handleSearch() {
         setStatus(Status.loading);
         setError(null);
@@ -32,22 +49,6 @@ export default function Products({ onShowProduct }: ProductsProps) {
         }
         setStatus(Status.success);
     }
-
-    useEffect(() => {
-        fetch(`${baseUrl}/search?q=${search}`)
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            setProducts(data.products);
-        })
-        .catch(e => {
-            setError("Error: " + e);
-        })
-        .finally(() => {
-            setStatus(Status.success);
-        });
-    }, []);
 
     return (
         <>
