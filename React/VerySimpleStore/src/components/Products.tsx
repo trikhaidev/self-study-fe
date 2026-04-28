@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import loadingImage from "../assets/Loading_icon.gif";
 import type Product from "../models/Product";
 import Status from "../models/Status";
@@ -9,7 +9,7 @@ type ProductsProps = {
     onShowProduct: (p: Product) => void;
 }
 export default function Products({ onShowProduct }: ProductsProps) {
-    const [status, setStatus] = useState(Status.firstLoading);
+    const [status, setStatus] = useState(Status.loading);
     const [search, setSearch] = useState('');
     const [products, setProducts] = useState<Product[]>([]);
     const [error, setError] = useState<string | null>(null);
@@ -32,9 +32,23 @@ export default function Products({ onShowProduct }: ProductsProps) {
         }
         setStatus(Status.success);
     }
-    if(status === Status.firstLoading) {
-        handleSearch();
-    }
+
+    useEffect(() => {
+        fetch(`${baseUrl}/search?q=${search}`)
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            setProducts(data.products);
+        })
+        .catch(e => {
+            setError("Error: " + e);
+        })
+        .finally(() => {
+            setStatus(Status.success);
+        });
+    }, []);
+
     return (
         <>
             <div className="mx-auto w-full max-w-7xl px-4 pb-12 pt-24 md:px-8">
