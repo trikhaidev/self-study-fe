@@ -16,6 +16,7 @@ export default function Form(p:FormProps){
         <form>
             {
                 p.showTitle && <h1>Your name!</h1>
+                // viết theo cách này thì UI tree trả về input luôn nằm ở vị trí thứ 2
             }
             <input type="text" placeholder="Full Name"/>
         </form>
