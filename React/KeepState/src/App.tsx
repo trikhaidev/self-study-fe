@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Count from "./components/Count"
 import HelloWorld from "./components/HelloWorld";
+import Form from "./components/Form";
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
    */
   return (
     <>
-      <HelloWorld show={!check}></HelloWorld>
+      {/* <HelloWorld show={!check}></HelloWorld>
       {check ? <p>check true</p> : ' asas  as as asasd'}
       <Count check={check}></Count>
       <Count check={check}></Count>
@@ -40,7 +41,9 @@ function App() {
             <input type="text" key='ok'/>
           </p>
         )
-      }
+      } */}
+      <button onClick={() => setcheck(!check)}>{check ? 'hide title' : 'show title'}</button>
+      <Form showTitle={check}></Form>
     </>
   )
 }
