@@ -1,13 +1,13 @@
 import { useReducer } from "react"
-import { xuly } from "./models/Task";
+import { tasksReducer } from "./models/Task";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 
 function App() {
-  const [tasks, xuLyTasks] = useReducer(xuly,[]);
+  const [tasks, dispatch] = useReducer(tasksReducer,[]);
 
   function handleAddTask(content:string){
-    xuLyTasks({
+    dispatch({
       type:'add',
       newTask:{
         content:content,
@@ -17,14 +17,14 @@ function App() {
   }
 
   function handleRemoveTask(id:number){
-    xuLyTasks({
+    dispatch({
       type:'remove',
       removeId:id,
     });
   }
 
   function handleChangeIsDone(id:number, isDone:boolean){
-    xuLyTasks({
+    dispatch({
       type : 'change_isDone',
       changeIsDone : {
         id:id,
@@ -34,14 +34,14 @@ function App() {
   }
 
   function handleEditing(id:number){
-    xuLyTasks({
+    dispatch({
       type :'editing',
       toggleIsEditing: id,
     });
   }
 
   function handleChangeContent(id:number, content:string){
-    xuLyTasks({
+    dispatch({
       type:'change_content',
       changeContent:{
         id:id,

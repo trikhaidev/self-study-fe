@@ -25,7 +25,7 @@ export interface TaskAction {
     }
 }
 
-export function xuly(taks: Task[], action: TaskAction):Task[] {
+export function tasksReducer(taks: Task[], action: TaskAction):Task[] {
     if (action.type === 'add') {
         return [
             ...taks,
