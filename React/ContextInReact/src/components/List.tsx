@@ -1,16 +1,24 @@
 import type React from "react";
+import { useContext } from "react";
+import { LevelContext } from "../contexts/LevelContext";
+import { ListTypeContext } from "../contexts/ListTypeContext";
 
-type UProps = {
-    type:string,
+type ListProps = {
     children:React.ReactNode,
 }
-export default function List(p:UProps){
-    const ListType = p.type === 'ul' ? 'ul' : 'ol'
+export default function List(p:ListProps){
+    const level = useContext(LevelContext);
+    const ListType = useContext(ListTypeContext);
+    const TagName = ListType ? 'ul' : 'ol'
     return (
-        <ListType>
-            {
-                p.children
-            }
-        </ListType>
+        <TagName>
+            <ListTypeContext value={!ListType}>
+                <LevelContext value={level + 1}>
+                    {
+                        p.children
+                    }
+                </LevelContext>
+            </ListTypeContext>
+        </TagName>
     );
 }
