@@ -12,6 +12,8 @@ export default function List(p:ListProps){
     const TagName = ListType ? 'ul' : 'ol'
     return (
         <TagName>
+            <input type="checkbox" />
+            <label htmlFor=""></label>
             <ListTypeContext value={!ListType}>
                 <LevelContext value={level + 1}>
                     {
