@@ -13,6 +13,10 @@ export default function AddTask(){
                 setText(e.currentTarget.value);
             }}/>
             <button onClick={() => {
+                if(!text){
+                    alert('Title is empty');
+                    return;
+                }
                 setText('');
                 dispatch!({
                     type:'add',

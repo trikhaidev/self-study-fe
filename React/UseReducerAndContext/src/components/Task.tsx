@@ -26,6 +26,10 @@ export default function Task(p:TaskProps){
                             });
                         }}/>
                         <button onClick={() => {
+                            if(!p.task.title){
+                                alert('Title is empty');
+                                return;
+                            }
                             setEditing(!editing);
                         }}>Save</button>
                     </div>
