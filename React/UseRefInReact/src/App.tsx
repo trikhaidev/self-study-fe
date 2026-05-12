@@ -1,4 +1,5 @@
 import { useRef, useState } from "react"
+import Products from "./components/Products";
 
 function App() {
   const [text, setText] = useState('');
@@ -21,6 +22,8 @@ function App() {
     <>
       <h1>The title is {title}</h1>
       <input type="text" value={text} onChange={handleChange}/>
+      <hr />
+      <Products></Products>
     </>
   )
 }
