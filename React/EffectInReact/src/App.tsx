@@ -2,6 +2,7 @@ import { useState } from "react"
 import Form from "./components/Form"
 import Form2 from "./components/Form2";
 import Input from "./components/Input";
+import Time from "./components/Time";
 
 function App() {
   const [border,setBorder] = useState(false);
@@ -13,6 +14,10 @@ function App() {
       <button onClick={() => setBorder(!border)}>Toggle Border</button>
       <hr />
       <Form2 border={border}></Form2>
+      <hr />
+      {
+        border && <Time></Time>
+      }
     </>
   )
 }
