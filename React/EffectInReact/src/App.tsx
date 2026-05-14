@@ -18,3 +18,8 @@ function App() {
 }
 
 export default App
+/**
+ * Truyền children về bản chất nó giống với việc gọi trực tiếp component con trong component cha 
+ * => Nếu kết quả render của component sau mỗi lần return mà children nằm ở những vị trí khác nhau hoặc được bọc trong những thẻ khác nhau 
+ * thì state của component con không được giữ
+ */
