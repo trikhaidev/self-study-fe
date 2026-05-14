@@ -1,13 +1,14 @@
 import { useState } from "react"
 import Form from "./components/Form"
 import Form2 from "./components/Form2";
+import Input from "./components/Input";
 
 function App() {
   const [border,setBorder] = useState(false);
   return (
     <>
       <Form border={border}>
-        <input type="text"/>
+        <Input></Input>
       </Form>
       <button onClick={() => setBorder(!border)}>Toggle Border</button>
       <hr />
