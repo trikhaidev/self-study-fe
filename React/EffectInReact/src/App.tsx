@@ -3,6 +3,7 @@ import Form from "./components/Form"
 import Form2 from "./components/Form2";
 import Input from "./components/Input";
 import Time from "./components/Time";
+import CountTime from "./components/CountTime";
 
 function App() {
   const [border,setBorder] = useState(false);
@@ -18,6 +19,9 @@ function App() {
       {
         border && <Time></Time>
       }
+      <hr />
+      <hr />
+      <CountTime></CountTime>
     </>
   )
 }
