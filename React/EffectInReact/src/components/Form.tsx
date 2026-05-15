@@ -19,7 +19,9 @@ export default function Form({children,border}:FormProps){
         );
     }
     return (
-        <form>
+        <form onSubmit={e => {
+            e.preventDefault();
+        }}>
             <button onClick={() => setSize(size + 5)}>+</button>
             {children}
         </form>
