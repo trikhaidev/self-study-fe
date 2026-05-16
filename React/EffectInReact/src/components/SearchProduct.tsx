@@ -13,13 +13,11 @@ export default function SearchProduct(){
     const [status, setStatus] = useState('done');
     const refInit = useRef(true);
     useEffect(() => {
-        const cancle = {
-            isCancle:false
-        };
+        let cancle = false;
 
         async function loadProduct(){
             const res = await fetch(`${BASE_URL}${search}`);
-            if(cancle.isCancle){
+            if(cancle){
                 return;
             }
             const data = await res.json();
@@ -42,7 +40,7 @@ export default function SearchProduct(){
             if(id){
                 clearTimeout(id);
             }
-            cancle.isCancle = true;
+            cancle = true;
         }
     },[search]);
 
