@@ -4,6 +4,7 @@ import Form2 from "./components/Form2";
 import Input from "./components/Input";
 import Time from "./components/Time";
 import CountTime from "./components/CountTime";
+import SearchProduct from "./components/SearchProduct";
 
 function App() {
   const [border,setBorder] = useState(false);
@@ -22,6 +23,9 @@ function App() {
       <hr />
       <hr />
       <CountTime></CountTime>
+      <hr />
+      <hr />
+      <SearchProduct></SearchProduct>
     </>
   )
 }
