@@ -13,6 +13,7 @@ export default function Products({ onShowProduct }: ProductsProps) {
     const [search, setSearch] = useState('');
     const [products, setProducts] = useState<Product[]>([]);
     const [error, setError] = useState<string | null>(null);
+    const inputRef = useRef<HTMLInputElement|null>(null);
     const init = useRef(true);
 
     useEffect(() => {
@@ -50,6 +51,7 @@ export default function Products({ onShowProduct }: ProductsProps) {
     },[search]);
 
     async function handleSearch() {
+        inputRef.current?.focus();
         setStatus(Status.loading);
         setError(null);
         try {
@@ -83,6 +85,7 @@ export default function Products({ onShowProduct }: ProductsProps) {
                         placeholder="Search products..."
                         value={search}
                         onChange={e => setSearch(e.currentTarget.value)}
+                        ref = {inputRef}
                     />
                     <button
                         className="h-11 min-w-32 rounded-xl bg-slate-900 px-5 font-semibold text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:bg-slate-400"
