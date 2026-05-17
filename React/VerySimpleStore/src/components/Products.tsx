@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import loadingImage from "../assets/Loading_icon.gif";
 import type Product from "../models/Product";
 import Status from "../models/Status";
@@ -13,22 +13,41 @@ export default function Products({ onShowProduct }: ProductsProps) {
     const [search, setSearch] = useState('');
     const [products, setProducts] = useState<Product[]>([]);
     const [error, setError] = useState<string | null>(null);
+    const init = useRef(true);
 
     useEffect(() => {
-        fetch(`${baseUrl}/search?q=${search}`)
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
+        let isCancle = false;
+
+        async function SearchAsync(){
+            setStatus(Status.loading);
+            const res = await fetch(`${baseUrl}/search?q=${search}`);
+            if(isCancle){
+                return;
+            }
+            const data = await res.json();
             setProducts(data.products);
-        })
-        .catch(e => {
-            setError("Error: " + e);
-        })
-        .finally(() => {
             setStatus(Status.success);
-        });
-    },[]);
+        }
+
+        let id:number|null = null;
+
+        if(init.current){
+            init.current = false;
+            SearchAsync();
+        }
+        else{
+            id = setTimeout(()=> {
+                SearchAsync();
+            },500);
+        }
+
+        return () => {
+            if(id){
+                clearTimeout(id);
+            }
+            isCancle = true;
+        }
+    },[search]);
 
     async function handleSearch() {
         setStatus(Status.loading);
