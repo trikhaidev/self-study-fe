@@ -31,6 +31,16 @@ function App() {
 }
 
 export default App
+
+/**
+ * Các setState được trả về bởi useState cũng có định danh ổn định, vì vậy bạn thường thấy chúng bị loại bỏ khỏi các phần phụ thuộc. 
+ * => Nếu trình kiểm tra cú pháp cho phép bạn loại bỏ một phần phụ thuộc mà không báo lỗi, thì việc đó là an toàn.
+ * 
+ * React sẽ gọi hàm dọn dẹp của bạn trước khi Effect chạy lần tiếp theo và trong quá trình hủy bỏ component.
+ */
+
+
+
 /**
  * Truyền children về bản chất nó giống với việc gọi trực tiếp component con trong component cha 
  * => Nếu kết quả render của component sau mỗi lần return mà children nằm ở những vị trí khác nhau hoặc được bọc trong những thẻ khác nhau 
