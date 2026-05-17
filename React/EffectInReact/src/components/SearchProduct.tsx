@@ -13,8 +13,8 @@ export default function SearchProduct(){
     const [status, setStatus] = useState('done');
     const refInit = useRef(true);
     useEffect(() => {
+        console.log('Effect load product');
         let cancle = false;
-
         async function loadProduct(){
             const res = await fetch(`${BASE_URL}${search}`);
             if(cancle){
@@ -43,6 +43,10 @@ export default function SearchProduct(){
             cancle = true;
         }
     },[search]);
+
+    useEffect(() => {
+        console.log('Second Effect');
+    });
 
     function handleSearch(e:React.ChangeEvent<HTMLInputElement, HTMLInputElement>){
         setSearch(e.currentTarget.value);

@@ -39,7 +39,9 @@ export default App
  * React sẽ gọi hàm dọn dẹp của bạn trước khi Effect chạy lần tiếp theo và trong quá trình hủy bỏ component.
  */
 
-
+/**
+ * Có thể có nhiều useEffect trong 1 component
+ */
 
 /**
  * Truyền children về bản chất nó giống với việc gọi trực tiếp component con trong component cha 
