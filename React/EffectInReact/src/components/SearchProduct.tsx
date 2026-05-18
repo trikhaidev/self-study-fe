@@ -16,21 +16,20 @@ export default function SearchProduct(){
         console.log('Effect load product');
         let cancle = false;
         async function loadProduct(){
+            setStatus('loading');
             const res = await fetch(`${BASE_URL}${search}`);
-            if(cancle){
-                return;
+            if(!cancle){
+                const data = await res.json();
+                setProducts(data.products);
+                setStatus('done');
             }
-            const data = await res.json();
-            setProducts(data.products);
-            setStatus('done');
         }
-        let id:number|null;
+        let id:number|undefined;
         if(refInit.current){
             loadProduct();
             refInit.current = false;
         }
         else{
-            setStatus('loading');
             id = setTimeout(() => {
                 loadProduct();
             }, 1000);
