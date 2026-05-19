@@ -5,7 +5,7 @@ import TypeFullName from './components/TypeFullname'
 function App() {
   return (
     <>
-      <TypeFullName></TypeFullName>
+      <TypeFullName>Cập nhật trạng thái dựa trên props hoặc state</TypeFullName>
     </>
   )
 }

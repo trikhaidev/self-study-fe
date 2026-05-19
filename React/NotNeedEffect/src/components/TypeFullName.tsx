@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function TypeFullName() {
+type TypeFullNameProps = {
+    children: React.ReactNode
+}
+export default function TypeFullName({children}:TypeFullNameProps) {
     return (
         <div style={
             {
@@ -8,7 +11,7 @@ export default function TypeFullName() {
                 padding: 10
             }
         }>
-            <h1>Cập nhật trạng thái dựa trên props hoặc state</h1>
+            <h1>{children}</h1>
             <div>
                 <h2>Cách 1: sử dụng Effect:</h2>
                 <WithEffect></WithEffect>
