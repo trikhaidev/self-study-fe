@@ -17,7 +17,11 @@ export default function Numbers({children}: NumbersProps) {
         );
     }
     return (
-        <div>
+        <div style={{
+            border: '1px solid black',
+            padding : 15,
+            marginTop: 15
+        }}>
             <h1>{children}</h1>
             <input type="number" value={number} onChange={e => setNumber(parseInt(e.currentTarget.value))}/> 
             <button onClick={handleAddNumber}>Add</button>
