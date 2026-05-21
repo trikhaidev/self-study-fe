@@ -15,7 +15,7 @@ export default function SelectItem({children}:SelectItemProps){
             <h1>{children}</h1>
             <input type="text" value={text} onChange={e => setText(e.currentTarget.value)}/>
             <button onClick={() => setItems([...items,text])}>Add</button>
-            <ShowItem items={items} key = {items.length}></ShowItem>
+            <ShowItem items={items} key={items.length}></ShowItem>
         </div>
     );
 }
@@ -25,17 +25,19 @@ type ShowItemProps = {
 }
 function ShowItem({items}:ShowItemProps){
     const [select,setSelect] = useState(0);
+
     // const prevItems = useRef(items);
     // if(prevItems.current !== items){
     //     prevItems.current = items;
     //     setSelect(0);
-    // } không thể truy cập ref trong quá trình reder ?
+    // } 
+    //Có thể dùng cách này nhưng bạn có thể thấy là đằng nào cũng phải render lại với select = 0 nên dùng cách dưới sẽ tốt hơn (k bị báo đỏ)
 
     // const [prevItems, setPrevItems] = useState(items);
     // if(prevItems !== items){
     //     setSelect(0);
     //     setPrevItems(items);
-    // } Cách này cũng không phải là tối ưu nhất. Cách tôi ưu nhất là truyền Key khi gọi ShowItem
+    // } //Cách này cũng không phải là tối ưu nhất. Cách tôi ưu nhất là truyền Key khi gọi ShowItem
 
     return (
         <>
