@@ -7,12 +7,16 @@ export default function SelectItem({children}:SelectItemProps){
     const [text,setText] = useState('');
     const [items, setItems] = useState<string[]>([]);
     return (
-        <>
+        <div style={{
+            border: '1px solid black',
+            padding : 15,
+            marginTop: 15
+        }}>
             <h1>{children}</h1>
             <input type="text" value={text} onChange={e => setText(e.currentTarget.value)}/>
             <button onClick={() => setItems([...items,text])}>Add</button>
             <ShowItem items={items} key = {items.length}></ShowItem>
-        </>
+        </div>
     );
 }
 
