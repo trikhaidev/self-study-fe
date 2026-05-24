@@ -1,5 +1,6 @@
 
 import './App.css'
+import HelloWorld from './components/HelloWorld'
 import Numbers from './components/Numbers'
 import ProductPage from './components/ProductPage'
 import ProfilePage from './components/ProfilePage'
@@ -14,6 +15,7 @@ function App() {
       <ProfilePage>Khôi phục toàn bộ trạng thái khi một thuộc tính thay đổi.</ProfilePage>
       <SelectItem>Điều chỉnh một số trạng thái khi một thuộc tính thay đổi.</SelectItem>
       <ProductPage>Sử dụng Effect để load dữ liệu</ProductPage>
+      <HelloWorld></HelloWorld>
     </>
   )
 }
