@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 
 let name = 'kai';
+let count = 0;
 export default function HelloWorld(){
     const [text, setText] = useState('');
 
