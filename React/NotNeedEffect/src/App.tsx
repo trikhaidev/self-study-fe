@@ -21,3 +21,8 @@ function App() {
 }
 
 export default App
+
+/**
+ * Đã học Lifecycle of Reactive Effects
+ * Link: https://react.dev/learn/lifecycle-of-reactive-effects
+ */
