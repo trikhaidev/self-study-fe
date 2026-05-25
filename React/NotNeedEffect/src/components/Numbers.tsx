@@ -28,9 +28,8 @@ export default function Numbers({children}: NumbersProps) {
             <br />
             <p>
                 <button onClick={() => setOdd(!odd)}>{odd ? 'Lẻ' : 'Chẵn'}</button>
-                {' '}
-                <Sum numbers={numbers} odd={odd}></Sum>
             </p>
+            <Sum numbers={numbers} odd={odd}></Sum>
             <ShowListNumber numbers={numbers}></ShowListNumber>
         </div>
     );
@@ -65,7 +64,7 @@ function Sum({numbers,odd}:ShowNumberListProps){
      */
 
     return (
-        <>Tổng: {total}</>
+        <p>Tổng: {total}</p>
     );
 }
 
