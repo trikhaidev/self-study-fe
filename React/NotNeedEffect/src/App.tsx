@@ -6,6 +6,7 @@ import ProductPage from './components/ProductPage'
 import ProfilePage from './components/ProfilePage'
 import SelectItem from './components/SelectItem'
 import TypeFullName from './components/TypeFullname'
+import TypeSomeThing from './components/TypeSomeThing'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <SelectItem>Điều chỉnh một số trạng thái khi một thuộc tính thay đổi.</SelectItem>
       <ProductPage>Sử dụng Effect để load dữ liệu</ProductPage>
       <HelloWorld></HelloWorld>
+      <TypeSomeThing></TypeSomeThing>
     </>
   )
 }
