@@ -7,10 +7,17 @@ export default function TypeSomeThing(){
     const showNumberOdd = useEffectEvent(() => {
         alert("Số lẻ: "+number);
     });
+    /**
+     * Nên dùng cách này nếu function được sử dụng trong effect nhưng bạn lại không muốn khai báo nó trong mảng phụ thuộc.
+     */
 
     // function showNumberOdd(){
     //     alert("Số lẻ: "+number);
     // }
+    /**
+     *  Nếu dùng cách này thì phải khai báo phụ thuộc, nhưng vì mỗi lần redner là 1 lần định nghĩa lại function mới nên các phụ thuộc sẽ khác nhau sau
+     * mỗi lần render, dẫn đến effect sẽ lại sau mỗi lần render
+     */
 
     useEffect(() => {
         if(number % 2 !== 0){
