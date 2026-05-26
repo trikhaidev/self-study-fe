@@ -9,6 +9,10 @@ export default function TypeSomeThing(){
     });
     /**
      * Nên dùng cách này nếu function được sử dụng trong effect nhưng bạn lại không muốn khai báo nó trong mảng phụ thuộc.
+     * 
+     * Lưu ý: vì đã sử dụng useEffectEvent nên ta k cần phải khai báo nó trong mảng phụ thuộc nữa. Nếu vẫn chày cối khai báo nó trong mảng phụ thuộc
+     * thì Effect vẫn sẽ chạy lại sau mỗi lần render.  Nói cách khác thì việc sử dụng useEffectEvent sẽ giống như việc bạn thông báo cho các Effect
+     * đang dùng function này là "Bạn không muốn Effect chạy lại chỉ vì function này được định nghĩa lại sau mỗi lần render"
      */
 
     // function showNumberOdd(){
