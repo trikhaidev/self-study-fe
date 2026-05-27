@@ -28,7 +28,7 @@ export default function TypeSomeThing(){
 
     useEffect(() => {
         if(number % 2 !== 0){
-            showNumberOdd();
+            showNumberOdd(); // showNumberOdd được định nghĩa với useEffectEvent nên sẽ không phải khai báo phụ thuộc
         }
     },[number]);
 
