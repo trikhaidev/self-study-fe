@@ -38,11 +38,13 @@ function useTimer(callback:(count:number) => void, delay:number) {
         let count = 0;
         console.warn('Set interval');
         const id = setInterval(() => {
-            onCallBackEvent(count++);
+            onCallBackEvent(count++); 
+            // đây là sự kiện của Effect. Mặc dù đã được đắng kí từ Effect trước đó nhưng mỗi khi Effect trước đó gọi lại
+            //onCallBackEvent thì nó luôn nhận được phiên bản mới nhất
         },delay);
         return () => {
             console.error("Clear Interval");
             clearInterval(id);
         }
-    },[delay]);
+    },[delay]); // => Effect chỉ chạy lại khi delay thay đổi
 }
