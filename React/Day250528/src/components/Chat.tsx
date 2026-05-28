@@ -25,6 +25,11 @@ function useTimer(callback:(count:number) => void, delay:number) {
         callback(count);
     });
     /**
+     * Ở đây, onCallBackEvent nó được gọi là Sự kiện Effect. Nó là một phần của logic Effect của bạn, nhưng nó hoạt động giống như một trình xử lý sự 
+     * kiện hơn. Logic bên trong nó không mang tính phản ứng và nó luôn "nhìn thấy" các giá trị mới nhất của props và state của bạn.
+     */
+
+    /**
      *  Mặc dù mỗi khi useEffectEvent chạy sẽ tạo ra một function mới tuy nhiên các Effect cũ đang chạy mà có sử dụng onCallBackEvent thì vẫn sẽ nhận được
      * phiên bản onCallBackEvent mới.
      * 
