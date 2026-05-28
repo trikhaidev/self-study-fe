@@ -24,6 +24,15 @@ function useTimer(callback:(count:number) => void, delay:number) {
     const onCallBackEvent = useEffectEvent((count:number) => {
         callback(count);
     });
+    /**
+     *  Mặc dù mỗi khi useEffectEvent chạy sẽ tạo ra một function mới tuy nhiên các Effect cũ đang chạy mà có sử dụng onCallBackEvent thì vẫn sẽ nhận được
+     * phiên bản onCallBackEvent mới.
+     * 
+     * Lưu ý: không cần phải khai báo onCallBackEvent trong mảng phụ thuộc vì khi bạn sử dụng useEffectEvent thì bạn đã thông báo cho react biết rằng
+     * đoạn mã bên trong sẽ không cần chạy lại mỗi khi các biến phản ứng thay đổi.
+     * 
+     * => Để cho dễ hiểu thì bạn cứ xem effectEvent(onCallBackEvent) chính là trình xử lý xự kiện của Effect. Nó sẽ được Effect gọi khi cần thiết
+     */
 
     useEffect(() => {
         let count = 0;
