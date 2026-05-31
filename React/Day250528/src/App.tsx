@@ -2,7 +2,7 @@ import Chat from "./components/Chat"
 import EffectEvent from "./components/EffectEvent"
 import Memo from "./components/Memo"
 import Timer from "./components/Timer"
-import { InCrement } from "./contexts/IncrementContext"
+import { InCrementContext } from "./contexts/IncrementContext"
 
 function App() {
   return (
@@ -13,9 +13,9 @@ function App() {
       <hr></hr>
       <EffectEvent></EffectEvent>
       <hr></hr>
-      <InCrement value={2.2}> /** Truyền giá trị cho context. Timer sẽ đọc được giá trị này (2.2) */
+      <InCrementContext value={5}> /** Truyền giá trị cho context. Timer sẽ đọc được giá trị này (2.2) */
         <Timer></Timer>
-      </InCrement>
+      </InCrementContext>
     </>
   )
 }

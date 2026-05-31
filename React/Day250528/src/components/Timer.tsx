@@ -1,9 +1,9 @@
 import { useContext, useEffect, useEffectEvent, useState } from "react";
-import { InCrement } from "../contexts/IncrementContext";
+import { InCrementContext } from "../contexts/IncrementContext";
 
-export default function Timer(){
+export default function     Timer(){
     const [count, setCount] = useState(0);
-    const initIncrement = useContext(InCrement);
+    const initIncrement = useContext(InCrementContext);
     const [increment, setIncrement] = useState(initIncrement);
 
     const onTick = useEffectEvent(() => {

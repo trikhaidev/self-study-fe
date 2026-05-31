@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const InCrement = createContext(5);
+export const InCrementContext = createContext(1);
