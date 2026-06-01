@@ -1,7 +1,7 @@
 import { useContext, useEffect, useEffectEvent, useState } from "react";
 import { InCrementContext } from "../contexts/IncrementContext";
 
-export default function     Timer(){
+export default function Timer() {
     const [count, setCount] = useState(0);
     const initIncrement = useContext(InCrementContext);
     const [increment, setIncrement] = useState(initIncrement);
@@ -14,9 +14,9 @@ export default function     Timer(){
         const id = setInterval(() => {
             // setCount(c => c + increment);
             onTick();
-        },1000);
+        }, 1000);
         return () => clearInterval(id);
-    },[]);
+    }, []);
 
     return (
         <>
