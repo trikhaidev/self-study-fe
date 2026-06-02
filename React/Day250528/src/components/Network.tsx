@@ -4,12 +4,12 @@ export default function Network() {
     const [isOnline, setIsOnline] = useState(true);
     const [count, setCount] = useState(0);
 
-    const counting = useEffectEvent(() => {
-        console.log("Counting...");
-        if(isOnline) {
-            setCount(count + 1);
-        }
-    });
+    // const counting = useEffectEvent(() => {
+    //     console.log("Counting...");
+    //     if(isOnline) {
+    //         setCount(count + 1);
+    //     }
+    // });
 
     useEffect(() => {
         function handleOnline() {
@@ -21,16 +21,31 @@ export default function Network() {
         window.addEventListener("online", handleOnline);
         window.addEventListener("offline", handleOffline);
 
-        const id = setInterval(() => {
-            counting();
-        },1000);
+        // const id = setInterval(() => {
+        //     counting();
+        // },1000);
 
         return () => {
             window.removeEventListener("online", handleOnline);
             window.removeEventListener("offline", handleOffline);
-            clearInterval(id);  
+            // clearInterval(id);  
         };
-    });
+    },[]);
+
+    useEffect(() => {
+        let id:number|null = null;
+        if(isOnline){
+            id = setInterval(() => {
+                setCount(c => c + 1);
+            },1000);
+        }
+        return () => {
+            if(id){
+                clearInterval(id);
+            }
+        }
+    },[isOnline]);
+
     return (
         <>
             <h1
