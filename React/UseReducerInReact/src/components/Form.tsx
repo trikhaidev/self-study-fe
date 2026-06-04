@@ -1,11 +1,13 @@
-import { useReducer } from "react";
-import { FormReducer, type FormModel } from "../models/FormModel";
+import useMyCustomReducer from "../custom-reducer/useMyCustomReducer";
+import { FormReducer, type FormModel} from "../models/FormModel";
+
 
 export default function Form() {
-    const [form, dispatch] = useReducer(FormReducer, {
+    const [form, dispatch] = useMyCustomReducer(FormReducer, {
         firstName: '',
         lastName: '',
-        email: ''
+        email: '',
+        editCount:0,
     });
     function handleEditForm(next: FormModel) {
         dispatch({
@@ -48,6 +50,7 @@ export default function Form() {
                         type: 'reset'
                     });
                 }}>Reset</button>
+                <p>Edit times: {form.editCount}</p>
             </div>
             {
                 (form.firstName || form.lastName || form.email) &&
