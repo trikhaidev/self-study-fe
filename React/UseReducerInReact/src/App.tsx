@@ -2,6 +2,7 @@ import { useReducer } from "react"
 import { tasksReducer } from "./models/Task";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
+import Form from "./components/Form";
 
 function App() {
   const [tasks, dispatch] = useReducer(tasksReducer,[]);
@@ -61,6 +62,8 @@ function App() {
         onEditing={handleEditing}
         onChangeContent={handleChangeContent}
       ></Tasks>
+      <hr />
+      <Form></Form>
     </>
   )
 }
