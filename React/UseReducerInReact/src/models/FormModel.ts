@@ -23,5 +23,11 @@ export function FormReducer(model:FormModel,action:FormAction):FormModel{
             editCount:model.editCount + 1,
         }
     }
+    else if(action.type === "count"){
+        return {
+            ...model,
+            editCount:model.editCount + 1,
+        }
+    }
     throw new Error('unknown action type');
 }

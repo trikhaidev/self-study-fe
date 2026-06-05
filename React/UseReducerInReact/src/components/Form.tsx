@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import useMyCustomReducer from "../custom-reducer/useMyCustomReducer";
-import { FormReducer, type FormModel} from "../models/FormModel";
+import { FormReducer, type FormModel } from "../models/FormModel";
+import { FormContext, FormContextReducer } from "../contexts/FormContext";
 
 
 export default function Form() {
@@ -7,7 +9,7 @@ export default function Form() {
         firstName: '',
         lastName: '',
         email: '',
-        editCount:0,
+        editCount: 0,
     });
     function handleEditForm(next: FormModel) {
         dispatch({
@@ -17,33 +19,24 @@ export default function Form() {
     }
     return (
         <>
-            <div>
-                <label>First Name: </label>
-                <input type="text" value={form.firstName} onChange={(e) => {
-                    handleEditForm({
-                        ...form,
-                        firstName: e.currentTarget.value
-                    });
-                }}></input>
-            </div>
-            <div>
-                <label>Last Name: </label>
-                <input type="text" value={form.lastName} onChange={e => {
-                    handleEditForm({
-                        ...form,
-                        lastName: e.currentTarget.value
-                    });
-                }}></input>
-            </div>
-            <div>
-                <label>Email: </label>
-                <input type="email" value={form.email} onChange={e => {
-                    handleEditForm({
-                        ...form,
-                        email: e.currentTarget.value
-                    });
-                }}></input>
-            </div>
+            <Div value={form.firstName} type="text" label="First name: " onChange={e => {
+                handleEditForm({
+                    ...form,
+                    firstName: e.currentTarget.value
+                });
+            }}></Div>
+            <Div value={form.lastName} type="text" label="Last name: " onChange={e => {
+                handleEditForm({
+                    ...form,
+                    lastName: e.currentTarget.value
+                });
+            }}></Div>
+            <Div value={form.email} type="email" label="Email: " onChange={e => {
+                handleEditForm({
+                    ...form,
+                    email: e.currentTarget.value
+                });
+            }}></Div>
             <div>
                 <button onClick={() => {
                     dispatch({
@@ -52,9 +45,46 @@ export default function Form() {
                 }}>Reset</button>
                 <p>Edit times: {form.editCount}</p>
             </div>
+            <FormContext value={form}>
+                <FormContextReducer value = {dispatch}>
+                    <ShowFormInfo></ShowFormInfo>
+                </FormContextReducer>
+            </FormContext>
+        </>
+    );
+}
+
+type DivProps = {
+    label: string;
+    type: string;
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement, HTMLInputElement>) => void;
+};
+
+function Div(p: DivProps) {
+    return (
+        <div>
+            <label>{p.label}</label>
+            <input type={p.type} value={p.value} onChange={p.onChange}></input>
+        </div>
+    );
+}
+
+function ShowFormInfo() {
+    const form = useContext(FormContext);
+    const formReducer = useContext(FormContextReducer);
+    return (
+        <>
             {
-                (form.firstName || form.lastName || form.email) &&
-                <div>
+                form && (form.firstName || form.lastName || form.email) &&
+                <div onClick = {() => {
+                    if(!formReducer){
+                        return;
+                    }
+                    formReducer({
+                        type:'count'
+                    });
+                }}>
                     Your information: {form.firstName} - {form.lastName} - {form.email}
                 </div>
             }
