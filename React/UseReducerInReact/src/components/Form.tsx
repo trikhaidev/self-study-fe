@@ -1,7 +1,6 @@
-import { useContext } from "react";
 import useMyCustomReducer from "../custom-reducer/useMyCustomReducer";
 import { FormReducer, type FormModel } from "../models/FormModel";
-import { FormContext, FormContextReducer } from "../contexts/FormContext";
+import ShowFormInfo, { ShowFormInfoProvider } from "./ShowFormInfo";
 
 
 export default function Form() {
@@ -45,11 +44,15 @@ export default function Form() {
                 }}>Reset</button>
                 <p>Edit times: {form.editCount}</p>
             </div>
-            <FormContext value={form}>
-                <FormContextReducer value = {dispatch}>
+            <ShowFormInfoProvider formContextValue={form} formContextReducerValue = {dispatch}>
+                <div style = {{
+                    padding:'10px',
+                    border:'1px solid black',
+                    marginTop:'10px',
+                }}>
                     <ShowFormInfo></ShowFormInfo>
-                </FormContextReducer>
-            </FormContext>
+                </div>
+            </ShowFormInfoProvider>
         </>
     );
 }
@@ -67,27 +70,5 @@ function Div(p: DivProps) {
             <label>{p.label}</label>
             <input type={p.type} value={p.value} onChange={p.onChange}></input>
         </div>
-    );
-}
-
-function ShowFormInfo() {
-    const form = useContext(FormContext);
-    const formReducer = useContext(FormContextReducer);
-    return (
-        <>
-            {
-                form && (form.firstName || form.lastName || form.email) &&
-                <div onClick = {() => {
-                    if(!formReducer){
-                        return;
-                    }
-                    formReducer({
-                        type:'count'
-                    });
-                }}>
-                    Your information: {form.firstName} - {form.lastName} - {form.email}
-                </div>
-            }
-        </>
     );
 }
