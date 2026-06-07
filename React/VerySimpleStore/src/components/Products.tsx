@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import loadingImage from "../assets/Loading_icon.gif";
 import type Product from "../models/Product";
 import Status from "../models/Status";
+import useOnlineStatus from "../hooks/UseOnlineStatus";
 
 export const baseUrl = 'https://dummyjson.com/products';
 
@@ -14,6 +15,7 @@ export default function Products({ onShowProduct }: ProductsProps) {
     const [products, setProducts] = useState<Product[]>([]);
     const [error, setError] = useState<string | null>(null);
     const inputRef = useRef<HTMLInputElement|null>(null);
+    const isOnline = useOnlineStatus();
     const init = useRef(true);
 
     useEffect(() => {
@@ -86,15 +88,22 @@ export default function Products({ onShowProduct }: ProductsProps) {
                         value={search}
                         onChange={e => setSearch(e.currentTarget.value)}
                         ref = {inputRef}
+                        disabled = {!isOnline}
                     />
                     <button
                         className="h-11 min-w-32 rounded-xl bg-slate-900 px-5 font-semibold text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:bg-slate-400"
                         onClick={handleSearch}
-                        disabled={status === Status.loading}
+                        disabled={status === Status.loading || !isOnline}
                     >
                         Search
                     </button>
                 </div>
+                {
+                    !isOnline &&
+                    <div className="mb-6 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-amber-700">
+                        You are currently offline. Please check your internet connection.
+                    </div>
+                }
                 {
                     status === Status.loading &&
                     <div className="flex justify-center rounded-2xl border border-slate-200 bg-white py-10">

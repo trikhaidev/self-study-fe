@@ -2,10 +2,12 @@ import { useState } from 'react';
 import Products from './components/Products'
 import type Product from './models/Product';
 import ShowProduct from './components/ShowProduct';
+import useOnlineStatus from './hooks/UseOnlineStatus';
 
 function App() {
   const [product, setProduct] = useState<Product | null>(null);
   const [reLoadProduct, setReLoadProduct] = useState(false);
+  const isOnline = useOnlineStatus();
   function handleToggleShowProduct(p: Product | null) {
     setProduct(p);
   }
@@ -19,7 +21,7 @@ function App() {
         }}
       >
         <div className="flex items-center gap-2.5">
-          <input id='reLoadProduct' type="checkbox" className="h-4 w-4 accent-emerald-600 cursor-pointer" checked={reLoadProduct} onChange={e => {
+          <input id='reLoadProduct' type="checkbox"  disabled={!isOnline} className="h-4 w-4 accent-emerald-600 cursor-pointer" checked={reLoadProduct} onChange={e => {
             e.stopPropagation();
             setReLoadProduct(e.currentTarget.checked);
           }} />
