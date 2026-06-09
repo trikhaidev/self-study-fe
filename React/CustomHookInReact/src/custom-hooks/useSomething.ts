@@ -26,7 +26,11 @@ export default function useSomething({tang}:{tang:boolean}){
         }
     },[tang]);
     /**
+     *  Bạn có thể nghĩ đến cách sử dụng ref thay cho state để tránh việc kích hoạt render lại. Tuy nhiên, React có một lưu ý quan trọng là: Không nên
+     * truy cập hay thay đổi giá trị của ref (thuộc tính current) trong quá trình hiển thị (render)
      * 
+     * Lưu ý: Kết luận trên về mặt cú pháp hay biên dịch hay trong lúc thực thi thì không hề có lỗi, đó chỉ là lời khuyên để việt code dễ bảo trì hơn.
+     * Hãy luôn tuân thủ theo trình kiểm tra cú pháp. 
      */
     return refCount.current;
 }
