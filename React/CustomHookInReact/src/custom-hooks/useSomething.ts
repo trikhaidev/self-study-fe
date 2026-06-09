@@ -31,6 +31,11 @@ export default function useSomething({tang}:{tang:boolean}){
      * 
      * Lưu ý: Kết luận trên về mặt cú pháp hay biên dịch hay trong lúc thực thi thì không hề có lỗi, đó chỉ là lời khuyên để việt code dễ bảo trì hơn.
      * Hãy luôn tuân thủ theo trình kiểm tra cú pháp. 
+     * 
+     * 
+     *  Không nên đọc hoặc ghi dữ liệu ref.current trong quá trình render. Nếu cần thông tin nào đó trong quá trình render, hãy sử dụng state thay thế. 
+     * Vì React không biết khi nào ref.currentref thay đổi, ngay cả việc đọc nó trong khi render cũng khiến hành vi của component khó dự đoán. 
+     * (Ngoại lệ duy nhất là đoạn mã if (!ref.current) ref.current = new Thing()chỉ thiết lập ref một lần trong lần render đầu tiên.)
      */
     return refCount.current;
 }
