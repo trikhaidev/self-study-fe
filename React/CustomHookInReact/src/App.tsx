@@ -42,7 +42,9 @@ function App() {
 
 /**
  *  Sử dụng flushSync để cập nhật state ngay lập tức. Tức là k cần phải đợi đến lần render tiếp theo mới cập nhật state.
- * Lưu ý: biến trạng thái hiện tại vẫn sẽ mang giá trị cũ trong lần render hiện tại.
+ * Lưu ý: Biến trạng thái hiện tại vẫn sẽ mang giá trị cũ trong lần render hiện tại.
+ * Lưu ý: ngay khi đoạn code trong flushSync được thực thi xong thì React sẽ ngay lập tức cập nhật DOM.
+ * Chi tiết xem tại: https://react.dev/learn/manipulating-the-dom-with-refs#flushing-state-updates-synchronously-with-flush-sync
  * 
  * Sử dụng useImperativeHandle để custom object được trả về khi sử dụng ref để thao tác với DOM
  * Chi tiết xem tại: https://react.dev/learn/manipulating-the-dom-with-refs#accessing-another-components-dom-nodes
