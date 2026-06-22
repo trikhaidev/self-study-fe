@@ -1,0 +1,25 @@
+.log{
+    border: 2px solid black;
+    padding: 15px;
+    border-radius: 20px 20px;
+}
+.log > div {
+    margin-bottom: 15px;
+}
+.input-form{
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.log-title{
+    text-align: center;
+}
+
+.btn-login{
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: aquamarine;
+}
