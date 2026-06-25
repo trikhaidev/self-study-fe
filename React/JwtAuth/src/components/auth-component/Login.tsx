@@ -17,6 +17,7 @@ export default function Login({ onLogin }: LoginTypeProps) {
             headers:{
                 'Content-Type': 'application/json',
             },
+            credentials:"include", //Login phải bao gồm credentials:"include" thì browser mới lưu cookie
             body: JSON.stringify({
                 userName : userName,
                 password : password
