@@ -1,73 +1,31 @@
-import { useEffect, useEffectEvent, useState } from 'react'
+import { useEffect, useEffectEvent, useState } from 'react';
 import './App.css'
-import Login from './components/auth-component/Login'
-
-export const HOST_NAME = "https://localhost:7180"
+import Auth from './components/auth/Auth';
+import { HttpClientService, HttpClientContext } from './services/HttpClientService';
 
 function App() {
-  const [accessToken, setAccessToken] = useState<string | null | undefined>();
-  const [loading, setLoading] = useState(true);
-  const refreshSession = useEffectEvent(() => {
-    async function handle() {
-      try {
-        const res = await fetch(`${HOST_NAME}/Auth/Session/RefreshSession`, {
-          method: "PUT",
-          credentials: "include"
-        });
-        if (res.ok) {
-          const body = await res.json();
-          setAccessToken(body.data.accessToken);
-        }
-        else {
-          setAccessToken(null);
-        }
-      }
-      catch {
-        setAccessToken(null);
-      }
-      setLoading(false);
-    }
-    handle();
-  });
-  useEffect(() => {
-    refreshSession();
-  }, []);
-
-  async function handleLogout() {
-    const res = await fetch(`${HOST_NAME}/Auth/Session/Logout`, {
-      method: "DELETE",
-      credentials: "include",
-      headers: {
-        "Authorization": `Bearer ${accessToken}`
-      }
+    const [accessToken ,setAccessToken] = useState<string|null|undefined>(null);
+    const httpClient = new HttpClientService(accessToken,setAccessToken);
+    const refreshSession = useEffectEvent( async () => {
+        await httpClient.RefreshSession();
     });
-    if(res.ok){
-      setAccessToken(null);
-    }
-  }
+    useEffect(() => {
+        refreshSession();
+    },[]);
 
-  return (
-    <>
-      <div className='main-container'>
-        {
-          loading &&
-          <h1>Đang tải ...</h1>
-        }
-        {
-          (!accessToken && !loading) &&
-          <Login onLogin={accessToken => {
-            setAccessToken(accessToken);
-          }}></Login>
-        }
-        {
-          accessToken &&
-          <>
-            <h1>Ban da dang nhap <button className='button-logout' onClick={handleLogout}>Đăng xuất</button></h1>
-          </>
-        }
-      </div>
-    </>
-  )
+    return(
+        <HttpClientContext value={httpClient}>
+            {
+                !accessToken &&
+                <Auth></Auth>
+            }
+            {
+                accessToken && <h1>Bạn đã đăng nhập <button onClick={async () => {
+                    await httpClient.Logout();
+                }}>Đăng xuất</button></h1>
+            }
+        </HttpClientContext>
+    );
 }
 
 export default App
