@@ -3,24 +3,32 @@ import './App.css'
 import Auth from './components/auth/Auth';
 import { HttpClientService, HttpClientContext } from './services/HttpClientService';
 
+export interface Auth {
+    userName: string | null | undefined,
+    accessToken: string | null | undefined
+}
+
 function App() {
-    const [accessToken ,setAccessToken] = useState<string|null|undefined>(null);
-    const httpClient = new HttpClientService(accessToken,setAccessToken);
-    const refreshSession = useEffectEvent( async () => {
+    const [auth, setAuth] = useState<Auth>({
+        userName: '',
+        accessToken: '',
+    });
+    const httpClient = new HttpClientService(auth.accessToken, setAuth);
+    const refreshSession = useEffectEvent(async () => {
         await httpClient.RefreshSession();
     });
     useEffect(() => {
         refreshSession();
-    },[]);
+    }, []);
 
-    return(
+    return (
         <HttpClientContext value={httpClient}>
             {
-                !accessToken &&
+                !auth.accessToken &&
                 <Auth></Auth>
             }
             {
-                accessToken && <h1>Bạn đã đăng nhập <button onClick={async () => {
+                auth.accessToken && <h1>Xin chào {auth.userName} <button onClick={async () => {
                     await httpClient.Logout();
                 }}>Đăng xuất</button></h1>
             }

@@ -1,16 +1,17 @@
 import { createContext } from "react";
 import type { ResponseBaseModel } from "../models/response/ResponseBaseModel";
 import type { AuthModel } from "../models/response/AuthModel";
+import type { Auth } from "../App";
 
 export const HOST_NAME = "https://localhost:7180"
 export class HttpClientService {
     public accessToken: string | null | undefined;
-    public setAccessToken: (newToken: string | null | undefined) => void;
+    public setAuth: (auth: Auth) => void;
 
     constructor(accessToken: string | null | undefined,
-        setAccessToken: (newToken: string | null | undefined) => void) {
+        setAuth: (auth: Auth) => void) {
         this.accessToken = accessToken;
-        this.setAccessToken = setAccessToken;
+        this.setAuth = setAuth;
     }
 
     public async Fetch<T>(request: RequestMessage): Promise<ResponseBaseModel<T> | undefined> {
@@ -24,7 +25,7 @@ export class HttpClientService {
                     credentials: request.credentials,
                     headers: {
                         ...request.headers,
-                        "content-type":'application/json',
+                        "content-type": 'application/json',
                         "Authorization": `Bearer ${this.accessToken}`
                     },
                     body: request.body
@@ -73,12 +74,18 @@ export class HttpClientService {
                 const body = await res.json() as ResponseBaseModel<AuthModel>;
                 const accessToken = body?.data?.accessToken;
                 this.accessToken = accessToken;
-                this.setAccessToken(accessToken);
+                this.setAuth({
+                    userName: body?.data?.userName,
+                    accessToken: accessToken,
+                });
             }
         }
         catch {
             this.accessToken = null;
-            this.setAccessToken(null);
+            this.setAuth({
+                userName: null,
+                accessToken: null,
+            });
         }
     }
 
@@ -94,21 +101,33 @@ export class HttpClientService {
                 const body = await res.json() as ResponseBaseModel<AuthModel>;
                 const accessToken = body?.data?.accessToken;
                 this.accessToken = accessToken;
-                this.setAccessToken(accessToken);
+                this.setAuth({
+                    userName: body.data?.userName,
+                    accessToken: accessToken,
+                });
             }
             else {
                 this.accessToken = null;
-                this.setAccessToken(null);
+                this.setAuth({
+                    userName: null,
+                    accessToken: null
+                });
             }
         }
         catch {
             this.accessToken = null;
-            this.setAccessToken(null);
+            this.setAuth({
+                userName: null,
+                accessToken: null
+            });
         }
     }
 
     public async Logout() {
-        this.setAccessToken(null);
+        this.setAuth({
+            userName: null,
+            accessToken: null
+        });
         await this.Fetch({
             path: 'Auth/Session/Logout',
             credentials: "include",
