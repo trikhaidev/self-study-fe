@@ -10,7 +10,9 @@ export default function Auth(){
         content = <Login></Login>;
     }
     else{
-        content = <Register></Register>;
+        content = <Register onRegister={() => {
+            setIsLogin(true);
+        }}></Register>;
     }
 
     return (

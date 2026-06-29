@@ -1,4 +1,6 @@
 import { createContext } from "react";
+import type { ResponseBaseModel } from "../models/response/ResponseBaseModel";
+import type { AuthModel } from "../models/response/AuthModel";
 
 export const HOST_NAME = "https://localhost:7180"
 export class HttpClientService {
@@ -11,20 +13,44 @@ export class HttpClientService {
         this.setAccessToken = setAccessToken;
     }
 
-    private async Fetch(request: RequestMessage): Promise<Response> {
-        const res = await fetch(
-            `${HOST_NAME}/${request.path}`,
-            {
-                method: request.method,
-                credentials: request.credentials,
-                headers: {
-                    ...request.headers,
-                    "Authorization": `Bearer ${this.accessToken}`
-                },
-                body: request.body
+    public async Fetch<T>(request: RequestMessage): Promise<ResponseBaseModel<T> | undefined> {
+        let res;
+        let body;
+        try {
+            res = await fetch(
+                `${HOST_NAME}/${request.path}`,
+                {
+                    method: request.method,
+                    credentials: request.credentials,
+                    headers: {
+                        ...request.headers,
+                        "content-type":'application/json',
+                        "Authorization": `Bearer ${this.accessToken}`
+                    },
+                    body: request.body
+                }
+            );
+            body = await res.json() as ResponseBaseModel<T>;
+        }
+        catch {
+            if (res?.status === 401) {
+                await this.RefreshSession();
+                res = await fetch(
+                    `${HOST_NAME}/${request.path}`,
+                    {
+                        method: request.method,
+                        credentials: request.credentials,
+                        headers: {
+                            ...request.headers,
+                            "Authorization": `Bearer ${this.accessToken}`
+                        },
+                        body: request.body
+                    }
+                );
+                body = await res.json() as ResponseBaseModel<T>;
             }
-        );
-        return res;
+        }
+        return body;
     }
 
     public async Login(userName: string, password: string) {
@@ -44,9 +70,10 @@ export class HttpClientService {
                 }
             );
             if (res.ok) {
-                const body = await res.json();
-                this.accessToken = body.data.accessToken;
-                this.setAccessToken(this.accessToken);
+                const body = await res.json() as ResponseBaseModel<AuthModel>;
+                const accessToken = body?.data?.accessToken;
+                this.accessToken = accessToken;
+                this.setAccessToken(accessToken);
             }
         }
         catch {
@@ -64,13 +91,14 @@ export class HttpClientService {
                 }
             );
             if (res.ok) {
-                const body = await res.json()
-                this.accessToken = body.data.accessToken;
-                this.setAccessToken(this.accessToken);
+                const body = await res.json() as ResponseBaseModel<AuthModel>;
+                const accessToken = body?.data?.accessToken;
+                this.accessToken = accessToken;
+                this.setAccessToken(accessToken);
             }
             else {
-                this.setAccessToken(null);
                 this.accessToken = null;
+                this.setAccessToken(null);
             }
         }
         catch {
@@ -79,12 +107,12 @@ export class HttpClientService {
         }
     }
 
-    public async Logout(){
+    public async Logout() {
         this.setAccessToken(null);
         await this.Fetch({
-            path:'Auth/Session/Logout',
-            credentials:"include",
-            method:"DELETE"
+            path: 'Auth/Session/Logout',
+            credentials: "include",
+            method: "DELETE"
         });
     }
 }
