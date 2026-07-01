@@ -14,7 +14,7 @@ export class HttpClientService {
         this.setAuth = setAuth;
     }
 
-    public async Fetch<T>(request: RequestMessage): Promise<ResponseBaseModel<T> | undefined> {
+    public async Fetch<T>(request: RequestMessage): Promise<{res:Response|null|undefined,body:ResponseBaseModel<T>|null|undefined}> {
         let res;
         let body;
         try {
@@ -31,7 +31,9 @@ export class HttpClientService {
                     body: request.body
                 }
             );
-            body = await res.json() as ResponseBaseModel<T>;
+            if(res.ok){
+                body = await res.json() as ResponseBaseModel<T>;
+            }
         }
         catch {
             if (res?.status === 401) {
@@ -51,7 +53,10 @@ export class HttpClientService {
                 body = await res.json() as ResponseBaseModel<T>;
             }
         }
-        return body;
+        return {
+            res: res,
+            body: body,
+        };
     }
 
     public async Login(userName: string, password: string) {

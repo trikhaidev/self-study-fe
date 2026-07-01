@@ -3,6 +3,7 @@ import { HttpClientContext } from "../../../services/HttpClientService";
 
 export default function Login(){
     const [showPassword, setShowPassword] = useState(false);
+    const [message, setMessage] = useState<string|null>(null);
     const httpClient = useContext(HttpClientContext);
     const [info, setInfo] = useState({
         userName : '',
@@ -21,7 +22,13 @@ export default function Login(){
         if(!httpClient){
             throw new Error("HttpClient is null");
         }
-        await httpClient.Login(info.userName,info.password);
+        try{
+            await httpClient.Login(info.userName,info.password);
+            setMessage(null);
+        }
+        catch{
+            setMessage('Đăng nhập thất bại');
+        }
     }
 
     return (
@@ -44,6 +51,9 @@ export default function Login(){
                 <div>
                     <button disabled={!info.userName || !info.password} type="submit">Đăng nhập</button>
                 </div>
+                {
+                    message && <p style={{color:'red'}}>{message}</p>
+                }
             </form>
         </>
     );
